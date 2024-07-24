@@ -1,0 +1,801 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+<meta name="x5-fullscreen" content="true">
+<meta name="full-screen" content="yes">
+<meta name="theme-color" content="#317EFB" />
+<meta content="width=device-width, initial-scale=1.0, maximum-scale=5.0, user-scalable=0" name="viewport">
+<meta name="description" content="markdown语法网站 markdown  一、 基础">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Markdown语法">
+<meta property="og:url" content="https://chpw421.github.io/2024/06/12/Markdown%E8%AF%AD%E6%B3%95(%E5%9F%BA%E7%A1%80%E6%89%A9%E5%B1%95)/index.html">
+<meta property="og:site_name" content="小陈的博客">
+<meta property="og:description" content="markdown语法网站 markdown  一、 基础">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2024-06-12T04:58:00.000Z">
+<meta property="article:modified_time" content="2024-07-24T10:19:44.980Z">
+<meta property="article:author" content="小陈">
+<meta property="article:tag" content="Markdown">
+<meta name="twitter:card" content="summary">
+
+
+<title >Markdown语法</title>
+
+<!-- Favicon -->
+
+    <link href='/favicon-16x16.png?v=2.1.0-beta.2' rel='icon' type='image/png' sizes='16x16' ></link>
+
+
+    <link href='/favicon-32x32.png?v=2.1.0-beta.2' rel='icon' type='image/png' sizes='32x32' ></link>
+
+
+
+    <link href='/site.webmanifest' rel='manifest' ></link>
+
+
+<!-- Plugin -->
+
+
+
+
+    
+<link rel="stylesheet" href="https://unpkg.com/hexo-theme-async@2.1.0-beta.2/source/css/plugins/bootstrap.row.css">
+
+    
+<link rel="stylesheet" href="https://unpkg.com/@fancyapps/ui@4.0/dist/fancybox.css">
+
+    
+    
+
+
+
+
+<!-- Icon -->
+
+
+    
+<script src="//at.alicdn.com/t/font_383361_cfn4m13f4v.js"></script>
+
+
+
+<!-- Variable -->
+<script>window.ASYNC_CONFIG = {"hostname":"chpw421.github.io","author":"小陈","root":"/","typed_text":null,"theme_version":"2.1.0-beta.2","theme":{"switch":true,"default":"style-dark"},"favicon":{"logo":"favicon-32x32.png","icon16":"favicon-16x16.png","icon32":"favicon-32x32.png","appleTouchIcon":null,"webmanifest":"/site.webmanifest","visibilitychange":true,"hidden":"failure.ico","showText":"(/≧▽≦/)Hey! Good again!","hideText":"(●—●)Oh, crash!","apple_touch_icon":"apple-touch-icon.png","show_text":"(/≧▽≦/)咦！又好了！","hide_text":"(●—●)喔哟，崩溃啦！"},"i18n":{"placeholder":"Searching...","empty":"We didn't find any results for the search: ${query}.","hits":"${hits} results found","hits_time":"${hits} results found in ${time} ms","author":"Post author: ","copyright_link":"Post link: ","copyright_license_title":"Copyright Notice: ","copyright_license_content":"All articles in this blog are licensed under undefined unless otherwise stated.","copy_success":"Copied","copy_failure":"Copy failed","open_read_mode":"Enter reading mode","exit_read_mode":"Exit reading mode","notice_outdate_message":"It has been undefined days since the last update, the content of the article may be outdated.","just":"Just","min":"minutes ago","hour":"hours ago","day":"days ago","month":"months ago"},"swup":false,"plugin":{"flickr_justified_gallery":"https://unpkg.com/flickr-justified-gallery@latest/dist/fjGallery.min.js"},"icons":{"sun":"far fa-sun","moon":"far fa-moon","play":"fas fa-play","email":"far fa-envelope","next":"fas fa-arrow-right","calendar":"far fa-calendar-alt","clock":"far fa-clock","user":"far fa-user","back_top":"fas fa-arrow-up","close":"fas fa-times","search":"fas fa-search","reward":"fas fa-hand-holding-usd","user_tag":"fas fa-user-alt","toc_tag":"fas fa-th-list","read":"fas fa-book-reader","arrows":"fas fa-arrows-alt-h","double_arrows":"fas fa-angle-double-down","copy":"fas fa-copy"},"icontype":"symbol","highlight":{"plugin":"prismjs","theme":true,"copy":true,"lang":false,"title":"default","height_limit":200},"creative_commons":{"license":"by-nc-sa","language":"deed.zh"},"search":{"enable":true,"type":"local","href":"https://www.google.com/search?q=site:","domain":null,"path":"search.xml"}};</script>
+<script id="async-page-config">window.PAGE_CONFIG = {"isPost":true,"isHome":false,"postUpdate":"2024-07-24 18:19:44"};</script>
+
+<!-- Theme mode css -->
+<link data-swup-theme rel="stylesheet" href="/css/index.css?v=2.1.0-beta.2" id="trm-switch-style">
+<script>
+    let defaultMode = ASYNC_CONFIG.theme.default !=='auto' ?  ASYNC_CONFIG.theme.default : (window.matchMedia("(prefers-color-scheme: light)").matches ? 'style-light' : 'style-dark')
+    let catchMode = localStorage.getItem('theme-mode') || defaultMode;
+    let type = catchMode === 'style-dark' ? 'add' : 'remove';
+    document.documentElement.classList[type]('dark')
+</script>
+
+<!-- CDN -->
+
+
+    
+    
+
+
+
+<!-- Site Analytics -->
+ 
+<meta name="generator" content="Hexo 7.3.0"></head>
+
+<body>
+
+  <!-- app wrapper -->
+  <div class="trm-app-frame">
+
+    <!-- page preloader -->
+    <div class="trm-preloader">
+    <div class="trm-holder">
+        <div class="preloader">
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+        </div>
+    </div>
+</div>
+    <!-- page preloader end -->
+
+    <!-- change mode preloader -->
+    <div class="trm-mode-swich-animation-frame">
+    <div class="trm-mode-swich-animation">
+        <i class="i-sun"><svg class="symbol-icon " aria-hidden="true">
+    <use xlink:href="#far fa-sun"></use>
+</svg></i>
+        <div class="trm-horizon"></div>
+        <i class="i-moon"><svg class="symbol-icon " aria-hidden="true">
+    <use xlink:href="#far fa-moon"></use>
+</svg></i>
+    </div>
+</div>
+    <!-- change mode preloader end -->
+
+      <!-- scroll container -->
+      <div id="trm-dynamic-content" class="trm-swup-animation">
+        <div id="trm-scroll-container" class="trm-scroll-container" style="opacity: 0">
+            <!-- top bar -->
+            <header class="trm-top-bar">
+	<div class="container">
+		<div class="trm-left-side">
+			<!-- logo -->
+<a href="/" class="trm-logo-frame trm-anima-link">
+    
+        <img alt="logo" src="/favicon-32x32.png">
+    
+    
+        <div class="trm-logo-text">
+            小<span>陈</span>
+        </div>
+    
+</a>
+<!-- logo end -->
+		</div>
+		<div class="trm-right-side">
+			<!-- menu -->
+<div class="trm-menu">
+    <nav>
+        <ul>
+            
+            <li class="menu-item-has-children ">
+                <a  href="/" target="">
+                    首页
+                </a>
+                
+            </li>
+            
+            <li class="menu-item-has-children ">
+                <a  href="/tags/" target="">
+                    标签
+                </a>
+                
+            </li>
+            
+            <li class="menu-item-has-children ">
+                <a  href="/categories/" target="">
+                    分类
+                </a>
+                
+            </li>
+            
+            <li class="menu-item-has-children ">
+                <a  href="/archives/" target="">
+                    归档
+                </a>
+                
+            </li>
+            
+            <li class="menu-item-has-children ">
+                <a data-no-swup href="/about/" target="">
+                    关于我
+                </a>
+                
+            </li>
+            
+        </ul>
+    </nav>
+</div>
+<!-- menu end -->
+			
+    <!-- mode switcher place -->
+    <div class="trm-mode-switcher-place">
+        <div class="trm-mode-switcher">
+            <svg class="symbol-icon " aria-hidden="true">
+    <use xlink:href="#far fa-sun"></use>
+</svg>
+            <input class="tgl tgl-light" id="trm-swich" type="checkbox">
+            <label class="trm-swich" for="trm-swich"></label>
+            <svg class="symbol-icon " aria-hidden="true">
+    <use xlink:href="#far fa-moon"></use>
+</svg>
+        </div>
+    </div>
+    <!-- mode switcher place end -->
+
+			
+    
+    <div id="trm-search-btn" class="trm-search-btn">
+        <svg class="symbol-icon " aria-hidden="true">
+    <use xlink:href="#fas fa-search"></use>
+</svg>
+    </div>
+     
+
+		</div>
+		<div class="trm-menu-btn">
+			<span></span>
+		</div>
+	</div>
+</header>
+            <!-- top bar end -->
+
+            <!-- body -->
+            
+<div class="trm-content-start">
+    <!-- banner -->
+    <div class="trm-banner">
+    
+    <!-- banner cover -->
+    <img style="object-position:top;object-fit:cover;" alt="banner" class="trm-banner-cover" src="/img/banner.png">
+    <!-- banner cover end -->
+    
+
+    <!-- banner content -->
+    <div class="trm-banner-content trm-overlay">
+        <div class="container">
+            <div class="row">
+                
+                <div class="col-lg-4"></div>
+                
+                <div class="col-lg-8">
+
+                    <!-- banner title -->
+                    <div class="trm-banner-text ">
+                        <div class="trm-label trm-mb-20">
+                            NEWS LETTER
+                        </div>
+                        <h1 class="trm-mb-30 trm-hsmb-font">
+                            Markdown语法
+                        </h1>
+
+                        
+                            <ul class="trm-breadcrumbs trm-label">
+                                <li>
+                                    <a href="/" class="trm-anima-link">Home</a>
+                                </li>
+                                <li>
+                                    <span>
+                                        2024
+                                    </span>
+                                </li>
+                            </ul>
+                        
+                    </div>
+                    <!-- banner title end -->
+
+                    <!-- scroll hint -->
+                    <span id="scroll-triger" class="trm-scroll-hint-frame">
+                        <div class="trm-scroll-hint"></div>
+                        <span class="trm-label">Scroll down</span>
+                    </span>
+                    <!-- scroll hint end -->
+
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- banner content end -->
+</div>
+    <!-- banner end -->
+    <div class="container">
+        <div class="row">
+            
+                <div id="page-sidebar" class="col-lg-4 hidden-sm">
+                    <!-- main card -->
+                    <div class="trm-main-card-frame trm-sidebar">
+    <div class="trm-main-card"> 
+        <!-- card header -->
+<div class="trm-mc-header">
+    <div class="trm-avatar-frame trm-mb-20">
+        <img alt="Avatar" class="trm-avatar" src="/img/avatar.jpg">
+    </div>
+    <h5 class="trm-name trm-mb-15">
+        小陈
+    </h5>
+    
+</div>
+<!-- card header end -->
+        <!-- sidebar social -->
+
+<div class="trm-divider trm-mb-40 trm-mt-40"></div>
+<div class="trm-social">
+    
+        <a href="https://github.com/chpw421" title="github" rel="nofollow" target="_blank">
+            <svg class="symbol-icon " aria-hidden="true">
+    <use xlink:href="#fab fa-github"></use>
+</svg>
+        </a>
+    
+        <a href="https://gitee.com/ikun_16_0" title="gitee" rel="nofollow" target="_blank">
+            <svg class="symbol-icon " aria-hidden="true">
+    <use xlink:href="#iconfont cg-gitee"></use>
+</svg>
+        </a>
+    
+</div>
+
+<!-- sidebar social end -->
+        <!-- info -->
+<div class="trm-divider trm-mb-40 trm-mt-40"></div>
+<ul class="trm-table trm-mb-20">
+    
+        <li>
+            <div class="trm-label">
+                姓名:
+            </div>
+            <div class="trm-label trm-label-light">
+                小陈
+            </div>
+        </li>
+    
+        <li>
+            <div class="trm-label">
+                地址:
+            </div>
+            <div class="trm-label trm-label-light">
+                君士坦丁堡
+            </div>
+        </li>
+    
+        <li>
+            <div class="trm-label">
+                年龄:
+            </div>
+            <div class="trm-label trm-label-light">
+                20
+            </div>
+        </li>
+    
+</ul>
+<!-- info end -->
+
+        
+    <div class="trm-divider trm-mb-40 trm-mt-40"></div>
+    <!-- action button -->
+    <div class="text-center">
+        <a href="mailto:1002464042@qq.com" class="trm-btn">
+            Contact Me
+            <svg class="symbol-icon " aria-hidden="true">
+    <use xlink:href="#far fa-envelope"></use>
+</svg>
+        </a>
+    </div>
+    <!-- action button end -->
+
+    </div>
+</div>
+                    <!-- main card end -->
+                </div>
+            
+            <div id="page-content" class="col-lg-8">
+                <div class="trm-content" id="trm-content">
+                    <div id="post-info" class="row hidden-sm">
+    <div class="col-sm-4">
+        <div class="trm-card trm-label trm-label-light text-center">
+            <svg class="symbol-icon trm-icon" aria-hidden="true">
+    <use xlink:href="#far fa-calendar-alt"></use>
+</svg><br>
+            06/12
+        </div>
+    </div>
+    <div class="col-sm-4">
+        <div class="trm-card trm-label trm-label-light text-center">
+            <svg class="symbol-icon trm-icon" aria-hidden="true">
+    <use xlink:href="#far fa-clock"></use>
+</svg><br>
+            12:58
+        </div>
+    </div>
+    <div class="col-sm-4">
+        <div id="post-author" class="trm-card trm-label trm-label-light text-center">
+            <svg class="symbol-icon trm-icon" aria-hidden="true">
+    <use xlink:href="#far fa-user"></use>
+</svg><br>
+            小陈
+        </div>
+    </div>
+</div>
+<div class="trm-card ">
+    <article id="article-container" class="trm-publication">
+    <blockquote>
+<p>markdown语法网站 <a target="_blank" rel="noopener" href="https://markdown.com.cn/intro.html">markdown</a></p>
+</blockquote>
+<h1 id="一、-基础"><a href="#一、-基础" class="headerlink" title="一、 基础"></a>一、 基础</h1><span id="more"></span>
+
+<h2 id="1-标题"><a href="#1-标题" class="headerlink" title="1. 标题"></a>1. 标题</h2><ol>
+<li>语法：<code>### 标题</code></li>
+<li>用法：井号加空格，井号越多、标题越小，井号越少、标题越大</li>
+</ol>
+<h2 id="2-段落"><a href="#2-段落" class="headerlink" title="2. 段落"></a>2. 段落</h2><ol>
+<li>用法：空白行分隔</li>
+</ol>
+<h2 id="3-换行"><a href="#3-换行" class="headerlink" title="3. 换行"></a>3. 换行</h2><ol>
+<li>用法：文本末尾加两个空格和回车</li>
+</ol>
+<h2 id="4-强调"><a href="#4-强调" class="headerlink" title="4. 强调"></a>4. 强调</h2><h3 id="4-1-粗体"><a href="#4-1-粗体" class="headerlink" title="4.1 粗体"></a>4.1 粗体</h3><pre><code>  1. 语法：`**文本**`
+  2. 用法：加粗部分的两侧各添加两个星号
+</code></pre>
+<h3 id="4-2-斜体"><a href="#4-2-斜体" class="headerlink" title="4.2 斜体"></a>4.2 斜体</h3><pre><code>  1. 语法： `*文本*或_文本_`
+  2. 用法：单词或短语前后添加一个星号或下划线
+</code></pre>
+<h2 id="5-引用"><a href="#5-引用" class="headerlink" title="5. 引用"></a>5. 引用</h2><ol>
+<li>语法：<code>&gt; 文本</code></li>
+<li>用法：要创建块引用，请在段落前添加一个 &gt; 符号，可以嵌套引用、多段落引用、支持少量markdown语法元素</li>
+</ol>
+<h2 id="6-列表"><a href="#6-列表" class="headerlink" title="6. 列表"></a>6. 列表</h2><h3 id="5-1-有序列表"><a href="#5-1-有序列表" class="headerlink" title="5.1 有序列表"></a>5.1 有序列表</h3><pre><code>  1. 语法：`1. 文本`
+  2. 用法：在每个列表项前添加数字并紧跟一个英文句点
+</code></pre>
+<h3 id="5-2-无需列表"><a href="#5-2-无需列表" class="headerlink" title="5.2 无需列表"></a>5.2 无需列表</h3><pre><code>  1. 语法：`- 文本、 * 文本或+ 文本`
+  2. 用法：在每个列表项前面添加破折号 (-)、星号 (*) 或加号 (+)
+</code></pre>
+<h2 id="7-代码"><a href="#7-代码" class="headerlink" title="7. 代码"></a>7. 代码</h2><ol>
+<li>语法：<code>文本</code></li>
+<li>用法：要将单词或短语表示为代码，请将其包裹在反引号 (`) 中。</li>
+</ol>
+<h2 id="8-分隔线"><a href="#8-分隔线" class="headerlink" title="8. 分隔线"></a>8. 分隔线</h2><ol>
+<li>语法：<code>*** 、--- 或___</code></li>
+<li>用法：在单独一行上使用三个或多个星号 (***)、破折号 (—) 或下划线 (___) ，并且不能包含其他内容。</li>
+</ol>
+<h2 id="9-链接"><a href="#9-链接" class="headerlink" title="9. 链接"></a>9. 链接</h2><ol>
+<li>语法：<code>[超链接显示名](超链接地址 &quot;超链接title&quot;)</code></li>
+<li>用法：链接文本放在中括号内，链接地址放在后面的括号中，链接title可选。</li>
+</ol>
+<h2 id="10-图片"><a href="#10-图片" class="headerlink" title="10. 图片"></a>10. 图片</h2><ol>
+<li>语法：<code>![图片alt](图片链接 &quot;图片title&quot;</code></li>
+<li>用法：要添加图像，请使用感叹号 (!), 然后在方括号增加替代文本，图片链接放在圆括号里，括号里的链接后可以增加一个可选的图片标题文本。</li>
+</ol>
+<h2 id="11-转义字符"><a href="#11-转义字符" class="headerlink" title="11. 转义字符"></a>11. 转义字符</h2><ol>
+<li>用法：要显示原本用于格式化 Markdown 文档的字符，请在字符前面添加反斜杠字符 \ 。</li>
+</ol>
+<h1 id="二、-扩展"><a href="#二、-扩展" class="headerlink" title="二、 扩展"></a>二、 扩展</h1><h2 id="1-表格"><a href="#1-表格" class="headerlink" title="1. 表格"></a>1. 表格</h2><ol>
+<li><p>语法：</p>
+<table>
+<thead>
+<tr>
+<th>Syntax</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>Header</td>
+<td>Title</td>
+</tr>
+<tr>
+<td>Paragraph</td>
+<td>Text</td>
+</tr>
+</tbody></table>
+</li>
+<li><p>用法：要添加表，请使用三个或多个连字符（—）创建每列的标题，并使用管道（|）分隔每列。您可以选择在表的任一端添加管道。<a target="_blank" rel="noopener" href="https://www.tablesgenerator.com/markdown_tables">表格</a></p>
+</li>
+</ol>
+<h2 id="2-围栏代码块"><a href="#2-围栏代码块" class="headerlink" title="2. 围栏代码块"></a>2. 围栏代码块</h2><ol>
+<li><p>语法：</p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">&quot;firstName&quot;: <span class="string">&quot;John&quot;</span>,</span><br><span class="line"><span class="string">&quot;lastName&quot;</span>: <span class="string">&quot;Smith&quot;</span>,</span><br><span class="line"><span class="string">&quot;age&quot;</span>: <span class="number">25</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>用法：Markdown基本语法允许您通过将行缩进四个空格或一个制表符来创建代码块。如果发现不方便，请尝试使用受保护的代码块。根据Markdown处理器或编辑器的不同，您将在代码块之前和之后的行上使用三个反引号（```）或三个波浪号（~~~）。</p>
+</li>
+</ol>
+<h2 id="3-脚注"><a href="#3-脚注" class="headerlink" title="3. 脚注"></a>3. 脚注</h2><ol>
+<li><p>语法：</p>
+<p><a href="%E8%84%9A%E6%B3%A8%E9%87%8A%E4%B9%89">^1</a>文本</p>
+</li>
+<li><p>用法：要创建脚注参考，请在方括号（[^1]）内添加插入符号和标识符。标识符可以是数字或单词，但不能包含空格或制表符。标识符仅将脚注参考与脚注本身相关联-在输出中，脚注按顺序编号。</p>
+</li>
+</ol>
+<h2 id="4-删除线"><a href="#4-删除线" class="headerlink" title="4. 删除线"></a>4. 删除线</h2><ol>
+<li>语法：<code>~~文本~~</code></li>
+<li>用法：您可以通过在单词中心放置一条水平线来删除单词。结果看起来<del>像这样</del>。此功能使您可以指示某些单词是一个错误，要从文档中删除。若要删除单词，请在单词前后使用两个波浪号~~</li>
+</ol>
+<h2 id="5-任务列表语法"><a href="#5-任务列表语法" class="headerlink" title="5. 任务列表语法"></a>5. 任务列表语法</h2><ol>
+<li><p>语法：</p>
+<ul>
+<li><input checked="" disabled="" type="checkbox"> Write the press release</li>
+<li><input checked="" disabled="" type="checkbox"> Update the website</li>
+<li><input disabled="" type="checkbox"> Contact the media</li>
+</ul>
+</li>
+<li><p>用法：任务列表使您可以创建带有复选框的项目列表。在支持任务列表的Markdown应用程序中，复选框将显示在内容旁边。要创建任务列表，请在任务列表项之前添加破折号-和方括号[ ]，并在[ ]前面加上空格。要选择一个复选框，请在方括号[x]之间添加 x</p>
+</li>
+</ol>
+<h2 id="6-使用Emoji表情"><a href="#6-使用Emoji表情" class="headerlink" title="6. 使用Emoji表情"></a>6. 使用Emoji表情</h2><ol>
+<li>用法：在 <a target="_blank" rel="noopener" href="https://emojipedia.org/">emoji</a>网站复制</li>
+</ol>
+
+</article>
+    
+    
+
+</div>
+<div id="post-next-prev" class="row">
+    <div class="col-lg-12">
+        <!-- title -->
+        <h5 class="trm-title-with-divider">
+            Other Articles
+            <span data-number="02"></span>
+        </h5>
+    </div>
+    
+        <div class="col-lg-6">
+    <div class="trm-blog-card trm-scroll-animation">
+        <a href="/2024/06/12/Git%E6%9C%AC%E5%9C%B0%E8%BF%9C%E7%A8%8B%E6%8E%A8%E9%80%81/" class="trm-cover-frame trm-anima-link">
+            
+            
+                <img alt="cover" class="no-fancybox" src="/img/block.jpg">
+            
+        </a>
+        
+        <div class="trm-card-descr">
+            <div class="trm-label trm-category trm-mb-20">
+                <a href=" /categories/Github/">
+                    Github
+                </a>
+            </div>
+            <h5>
+                <a href="/2024/06/12/Git%E6%9C%AC%E5%9C%B0%E8%BF%9C%E7%A8%8B%E6%8E%A8%E9%80%81/" class="trm-anima-link">
+                    GitHub相关操作笔记
+                </a>
+            </h5>
+            <div class="trm-divider trm-mb-20 trm-mt-20"></div>
+            <ul class="trm-card-data trm-label">
+                <li>24/06/12</li>
+                <li>12:58</li>
+                
+                
+            </ul>
+        </div>
+    </div>
+</div>
+    
+    
+        <div class="col-lg-6">
+    <div class="trm-blog-card trm-scroll-animation">
+        <a href="/2024/06/12/SSH%E4%BD%BF%E7%94%A8%E6%95%99%E7%A8%8B/" class="trm-cover-frame trm-anima-link">
+            
+            
+                <img alt="cover" class="no-fancybox" src="/img/block.jpg">
+            
+        </a>
+        
+        <div class="trm-card-descr">
+            <div class="trm-label trm-category trm-mb-20">
+                <a href=" /categories/SSH/">
+                    SSH
+                </a>
+            </div>
+            <h5>
+                <a href="/2024/06/12/SSH%E4%BD%BF%E7%94%A8%E6%95%99%E7%A8%8B/" class="trm-anima-link">
+                    SSH使用教程
+                </a>
+            </h5>
+            <div class="trm-divider trm-mb-20 trm-mt-20"></div>
+            <ul class="trm-card-data trm-label">
+                <li>24/06/12</li>
+                <li>12:58</li>
+                
+                
+            </ul>
+        </div>
+    </div>
+</div>
+    
+</div>
+
+    
+
+
+
+                    <div class="trm-divider footer-divider"></div>
+
+                    <!-- footer -->
+                    <footer class="trm-scroll-animation">
+
+    
+        <div class="trm-footer-item">
+            <a rel="noopener" href="https://beian.miit.gov.cn/" target="_blank"></a>
+        </div>
+    
+
+    
+
+    
+        <div class="trm-footer-item">
+            <span>
+                Powered by <a href="https://hexo.io" target="_blank" rel="noopener">Hexo</a> v7.3.0
+            </span>
+            <span class="footer-separator" data-separator=" | "></span>
+            <span> 
+                Theme - 
+                <a rel="noopener" href='https://github.com/MaLuns/hexo-theme-async' target='_blank'>Async</a>
+                v2.1.0-beta.2
+            </span>
+        </div>
+      
+
+    
+        <div class="trm-footer-item">
+            The blog has been lovely to run <span id="since" class="trm-accent-color"></span> day
+        </div>
+     
+
+     
+</footer>
+
+<script>
+    function show_date_time () {
+        var BirthDay = new Date("07/23/2024 20:26:00");
+        var today = new Date();
+        var timeold = (today.getTime() - BirthDay.getTime());
+        var msPerDay = 24 * 60 * 60 * 1000
+        var day = Math.floor(timeold / msPerDay)
+        since.innerHTML = day
+    }
+    show_date_time()
+</script>
+ 
+                    <!-- footer end -->
+
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+            <!-- body end -->
+
+            
+
+    <div id="post-toc" class="post-toc">
+        <ol class="toc"><li class="toc-item toc-level-1"><a rel="nofollow" class="toc-link" href="#一、-基础"  data-scroll-to="#一、-基础"><span class="toc-number">1.</span> <span class="toc-text">一、 基础</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a rel="nofollow" class="toc-link" href="#1-标题"  data-scroll-to="#1-标题"><span class="toc-number">1.1.</span> <span class="toc-text">1. 标题</span></a></li><li class="toc-item toc-level-2"><a rel="nofollow" class="toc-link" href="#2-段落"  data-scroll-to="#2-段落"><span class="toc-number">1.2.</span> <span class="toc-text">2. 段落</span></a></li><li class="toc-item toc-level-2"><a rel="nofollow" class="toc-link" href="#3-换行"  data-scroll-to="#3-换行"><span class="toc-number">1.3.</span> <span class="toc-text">3. 换行</span></a></li><li class="toc-item toc-level-2"><a rel="nofollow" class="toc-link" href="#4-强调"  data-scroll-to="#4-强调"><span class="toc-number">1.4.</span> <span class="toc-text">4. 强调</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a rel="nofollow" class="toc-link" href="#4-1-粗体"  data-scroll-to="#4-1-粗体"><span class="toc-number">1.4.1.</span> <span class="toc-text">4.1 粗体</span></a></li><li class="toc-item toc-level-3"><a rel="nofollow" class="toc-link" href="#4-2-斜体"  data-scroll-to="#4-2-斜体"><span class="toc-number">1.4.2.</span> <span class="toc-text">4.2 斜体</span></a></li></ol></li><li class="toc-item toc-level-2"><a rel="nofollow" class="toc-link" href="#5-引用"  data-scroll-to="#5-引用"><span class="toc-number">1.5.</span> <span class="toc-text">5. 引用</span></a></li><li class="toc-item toc-level-2"><a rel="nofollow" class="toc-link" href="#6-列表"  data-scroll-to="#6-列表"><span class="toc-number">1.6.</span> <span class="toc-text">6. 列表</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a rel="nofollow" class="toc-link" href="#5-1-有序列表"  data-scroll-to="#5-1-有序列表"><span class="toc-number">1.6.1.</span> <span class="toc-text">5.1 有序列表</span></a></li><li class="toc-item toc-level-3"><a rel="nofollow" class="toc-link" href="#5-2-无需列表"  data-scroll-to="#5-2-无需列表"><span class="toc-number">1.6.2.</span> <span class="toc-text">5.2 无需列表</span></a></li></ol></li><li class="toc-item toc-level-2"><a rel="nofollow" class="toc-link" href="#7-代码"  data-scroll-to="#7-代码"><span class="toc-number">1.7.</span> <span class="toc-text">7. 代码</span></a></li><li class="toc-item toc-level-2"><a rel="nofollow" class="toc-link" href="#8-分隔线"  data-scroll-to="#8-分隔线"><span class="toc-number">1.8.</span> <span class="toc-text">8. 分隔线</span></a></li><li class="toc-item toc-level-2"><a rel="nofollow" class="toc-link" href="#9-链接"  data-scroll-to="#9-链接"><span class="toc-number">1.9.</span> <span class="toc-text">9. 链接</span></a></li><li class="toc-item toc-level-2"><a rel="nofollow" class="toc-link" href="#10-图片"  data-scroll-to="#10-图片"><span class="toc-number">1.10.</span> <span class="toc-text">10. 图片</span></a></li><li class="toc-item toc-level-2"><a rel="nofollow" class="toc-link" href="#11-转义字符"  data-scroll-to="#11-转义字符"><span class="toc-number">1.11.</span> <span class="toc-text">11. 转义字符</span></a></li></ol></li><li class="toc-item toc-level-1"><a rel="nofollow" class="toc-link" href="#二、-扩展"  data-scroll-to="#二、-扩展"><span class="toc-number">2.</span> <span class="toc-text">二、 扩展</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a rel="nofollow" class="toc-link" href="#1-表格"  data-scroll-to="#1-表格"><span class="toc-number">2.1.</span> <span class="toc-text">1. 表格</span></a></li><li class="toc-item toc-level-2"><a rel="nofollow" class="toc-link" href="#2-围栏代码块"  data-scroll-to="#2-围栏代码块"><span class="toc-number">2.2.</span> <span class="toc-text">2. 围栏代码块</span></a></li><li class="toc-item toc-level-2"><a rel="nofollow" class="toc-link" href="#3-脚注"  data-scroll-to="#3-脚注"><span class="toc-number">2.3.</span> <span class="toc-text">3. 脚注</span></a></li><li class="toc-item toc-level-2"><a rel="nofollow" class="toc-link" href="#4-删除线"  data-scroll-to="#4-删除线"><span class="toc-number">2.4.</span> <span class="toc-text">4. 删除线</span></a></li><li class="toc-item toc-level-2"><a rel="nofollow" class="toc-link" href="#5-任务列表语法"  data-scroll-to="#5-任务列表语法"><span class="toc-number">2.5.</span> <span class="toc-text">5. 任务列表语法</span></a></li><li class="toc-item toc-level-2"><a rel="nofollow" class="toc-link" href="#6-使用Emoji表情"  data-scroll-to="#6-使用Emoji表情"><span class="toc-number">2.6.</span> <span class="toc-text">6. 使用Emoji表情</span></a></li></ol></li></ol>
+    </div>
+
+            
+<div class="trm-fixed-container">
+    
+        <div class="trm-fixed-btn post-toc-btn" data-title="Open toc">
+            <svg class="symbol-icon " aria-hidden="true">
+    <use xlink:href="#fas fa-th-list"></use>
+</svg>
+        </div>
+    
+    
+        <div class="trm-fixed-btn" data-title="Read Mode" onclick="asyncFun.switchReadMode()">
+            <svg class="symbol-icon " aria-hidden="true">
+    <use xlink:href="#fas fa-book-reader"></use>
+</svg>
+        </div>
+    
+    
+        <div class="trm-fixed-btn" data-title="Toggle between single-column and double-column" onclick="asyncFun.switchSingleColumn()">
+            <svg class="symbol-icon " aria-hidden="true">
+    <use xlink:href="#fas fa-arrows-alt-h"></use>
+</svg>
+        </div>
+    
+    <div id="trm-back-top" class="trm-fixed-btn" data-title="Back To Top">
+        <svg class="symbol-icon " aria-hidden="true">
+    <use xlink:href="#fas fa-arrow-up"></use>
+</svg>
+    </div>
+</div>
+        </div>
+      </div>
+      <!-- scroll container end -->
+  </div>
+  <!-- app wrapper end -->
+
+  
+    <div class="trm-search-popup">
+        <div class="trm-search-wrapper">
+            <div class="form trm-search-form">
+                <div class="trm-search-input-icon">
+                    <svg class="symbol-icon " aria-hidden="true">
+    <use xlink:href="#fas fa-search"></use>
+</svg>
+                </div>
+                <input class="trm-search-input" type="text" placeholder="Searching...">
+                <div class="trm-search-btn-close">
+                    <svg class="symbol-icon " aria-hidden="true">
+    <use xlink:href="#fas fa-times"></use>
+</svg>
+                </div>
+            </div>
+            <div class="trm-search-result-container">
+                <div class="trm-search-empty">
+                    Please enter keywords to search
+                </div>
+            </div>
+            <div class="trm-search-footer">
+                <div class="trm-search-stats"></div>
+                <ul class="trm-search-commands">
+                    <li>
+                        <kbd class="command-palette-commands-key">
+                            <svg width="15" height="15" aria-label="Escape key" role="img">
+                                <g fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
+                                    stroke-width="1.2">
+                                    <path
+                                        d="M13.6167 8.936c-.1065.3583-.6883.962-1.4875.962-.7993 0-1.653-.9165-1.653-2.1258v-.5678c0-1.2548.7896-2.1016 1.653-2.1016.8634 0 1.3601.4778 1.4875 1.0724M9 6c-.1352-.4735-.7506-.9219-1.46-.8972-.7092.0246-1.344.57-1.344 1.2166s.4198.8812 1.3445.9805C8.465 7.3992 8.968 7.9337 9 8.5c.032.5663-.454 1.398-1.4595 1.398C6.6593 9.898 6 9 5.963 8.4851m-1.4748.5368c-.2635.5941-.8099.876-1.5443.876s-1.7073-.6248-1.7073-2.204v-.4603c0-1.0416.721-2.131 1.7073-2.131.9864 0 1.6425 1.031 1.5443 2.2492h-2.956">
+                                    </path>
+                                </g>
+                            </svg>
+                        </kbd>
+                        <span class="command-palette-Label">to close</span>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+  <!-- Plugin -->
+
+
+
+
+    
+    
+<script src="https://unpkg.com/@fancyapps/ui@4.0/dist/fancybox.umd.js"></script>
+
+    
+
+    
+
+    
+        
+<script src="https://unpkg.com/hexo-generator-searchdb@1.4.0/dist/search.js"></script>
+
+        <script src="https://unpkg.com/hexo-theme-async@2.1.0-beta.2/source/js/plugins/local_search.js?v=2.1.0-beta.2"></script>
+    
+
+    <!-- 数学公式 -->
+    
+
+    <!-- 评论插件 -->
+    
+        
+
+        
+    
+
+
+
+<!-- CDN -->
+
+
+    
+<script src="/demo.js"></script>
+
+
+    
+
+    
+
+
+
+
+    <!-- Service Worker -->
+    
+    <!-- baidu push -->
+    
+    <script data-swup-reload-script>
+        (function () {
+            var bp = document.createElement('script');
+            var curProtocol = window.location.protocol.split(':')[0];
+            if (curProtocol === 'https') {
+                bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';
+            }
+            else {
+                bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+            }
+            var s = document.getElementsByTagName("script")[0];
+            s.parentNode.insertBefore(bp, s);
+        })();
+    </script>
+
+
+
+<script id="async-script" src="https://unpkg.com/hexo-theme-async@2.1.0-beta.2/source/js/main.js?v=2.1.0-beta.2"></script>
+
+</body>
+
+</html>

@@ -1,0 +1,774 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+<meta name="x5-fullscreen" content="true">
+<meta name="full-screen" content="yes">
+<meta name="theme-color" content="#317EFB" />
+<meta content="width=device-width, initial-scale=1.0, maximum-scale=5.0, user-scalable=0" name="viewport">
+<meta name="description" content="这是大学实训linux服务与配置用到的操作步骤mysql操作基于Ubuntu 20.04, 其他操作基于CentOS 7">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Linux服务器实训">
+<meta property="og:url" content="https://chpw421.github.io/2024/06/12/%E6%9C%8D%E5%8A%A1%E5%99%A8%E5%AE%9E%E8%AE%AD/index.html">
+<meta property="og:site_name" content="小陈的博客">
+<meta property="og:description" content="这是大学实训linux服务与配置用到的操作步骤mysql操作基于Ubuntu 20.04, 其他操作基于CentOS 7">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2024-06-12T04:58:00.000Z">
+<meta property="article:modified_time" content="2024-07-24T10:19:16.714Z">
+<meta property="article:author" content="小陈">
+<meta property="article:tag" content="Linux">
+<meta name="twitter:card" content="summary">
+
+
+<title >Linux服务器实训</title>
+
+<!-- Favicon -->
+
+    <link href='/favicon-16x16.png?v=2.1.0-beta.2' rel='icon' type='image/png' sizes='16x16' ></link>
+
+
+    <link href='/favicon-32x32.png?v=2.1.0-beta.2' rel='icon' type='image/png' sizes='32x32' ></link>
+
+
+
+    <link href='/site.webmanifest' rel='manifest' ></link>
+
+
+<!-- Plugin -->
+
+
+
+
+    
+<link rel="stylesheet" href="https://unpkg.com/hexo-theme-async@2.1.0-beta.2/source/css/plugins/bootstrap.row.css">
+
+    
+<link rel="stylesheet" href="https://unpkg.com/@fancyapps/ui@4.0/dist/fancybox.css">
+
+    
+    
+
+
+
+
+<!-- Icon -->
+
+
+    
+<script src="//at.alicdn.com/t/font_383361_cfn4m13f4v.js"></script>
+
+
+
+<!-- Variable -->
+<script>window.ASYNC_CONFIG = {"hostname":"chpw421.github.io","author":"小陈","root":"/","typed_text":null,"theme_version":"2.1.0-beta.2","theme":{"switch":true,"default":"style-dark"},"favicon":{"logo":"favicon-32x32.png","icon16":"favicon-16x16.png","icon32":"favicon-32x32.png","appleTouchIcon":null,"webmanifest":"/site.webmanifest","visibilitychange":true,"hidden":"failure.ico","showText":"(/≧▽≦/)Hey! Good again!","hideText":"(●—●)Oh, crash!","apple_touch_icon":"apple-touch-icon.png","show_text":"(/≧▽≦/)咦！又好了！","hide_text":"(●—●)喔哟，崩溃啦！"},"i18n":{"placeholder":"Searching...","empty":"We didn't find any results for the search: ${query}.","hits":"${hits} results found","hits_time":"${hits} results found in ${time} ms","author":"Post author: ","copyright_link":"Post link: ","copyright_license_title":"Copyright Notice: ","copyright_license_content":"All articles in this blog are licensed under undefined unless otherwise stated.","copy_success":"Copied","copy_failure":"Copy failed","open_read_mode":"Enter reading mode","exit_read_mode":"Exit reading mode","notice_outdate_message":"It has been undefined days since the last update, the content of the article may be outdated.","just":"Just","min":"minutes ago","hour":"hours ago","day":"days ago","month":"months ago"},"swup":false,"plugin":{"flickr_justified_gallery":"https://unpkg.com/flickr-justified-gallery@latest/dist/fjGallery.min.js"},"icons":{"sun":"far fa-sun","moon":"far fa-moon","play":"fas fa-play","email":"far fa-envelope","next":"fas fa-arrow-right","calendar":"far fa-calendar-alt","clock":"far fa-clock","user":"far fa-user","back_top":"fas fa-arrow-up","close":"fas fa-times","search":"fas fa-search","reward":"fas fa-hand-holding-usd","user_tag":"fas fa-user-alt","toc_tag":"fas fa-th-list","read":"fas fa-book-reader","arrows":"fas fa-arrows-alt-h","double_arrows":"fas fa-angle-double-down","copy":"fas fa-copy"},"icontype":"symbol","highlight":{"plugin":"prismjs","theme":true,"copy":true,"lang":false,"title":"default","height_limit":200},"creative_commons":{"license":"by-nc-sa","language":"deed.zh"},"search":{"enable":true,"type":"local","href":"https://www.google.com/search?q=site:","domain":null,"path":"search.xml"}};</script>
+<script id="async-page-config">window.PAGE_CONFIG = {"isPost":true,"isHome":false,"postUpdate":"2024-07-24 18:19:16"};</script>
+
+<!-- Theme mode css -->
+<link data-swup-theme rel="stylesheet" href="/css/index.css?v=2.1.0-beta.2" id="trm-switch-style">
+<script>
+    let defaultMode = ASYNC_CONFIG.theme.default !=='auto' ?  ASYNC_CONFIG.theme.default : (window.matchMedia("(prefers-color-scheme: light)").matches ? 'style-light' : 'style-dark')
+    let catchMode = localStorage.getItem('theme-mode') || defaultMode;
+    let type = catchMode === 'style-dark' ? 'add' : 'remove';
+    document.documentElement.classList[type]('dark')
+</script>
+
+<!-- CDN -->
+
+
+    
+    
+
+
+
+<!-- Site Analytics -->
+ 
+<meta name="generator" content="Hexo 7.3.0"></head>
+
+<body>
+
+  <!-- app wrapper -->
+  <div class="trm-app-frame">
+
+    <!-- page preloader -->
+    <div class="trm-preloader">
+    <div class="trm-holder">
+        <div class="preloader">
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+        </div>
+    </div>
+</div>
+    <!-- page preloader end -->
+
+    <!-- change mode preloader -->
+    <div class="trm-mode-swich-animation-frame">
+    <div class="trm-mode-swich-animation">
+        <i class="i-sun"><svg class="symbol-icon " aria-hidden="true">
+    <use xlink:href="#far fa-sun"></use>
+</svg></i>
+        <div class="trm-horizon"></div>
+        <i class="i-moon"><svg class="symbol-icon " aria-hidden="true">
+    <use xlink:href="#far fa-moon"></use>
+</svg></i>
+    </div>
+</div>
+    <!-- change mode preloader end -->
+
+      <!-- scroll container -->
+      <div id="trm-dynamic-content" class="trm-swup-animation">
+        <div id="trm-scroll-container" class="trm-scroll-container" style="opacity: 0">
+            <!-- top bar -->
+            <header class="trm-top-bar">
+	<div class="container">
+		<div class="trm-left-side">
+			<!-- logo -->
+<a href="/" class="trm-logo-frame trm-anima-link">
+    
+        <img alt="logo" src="/favicon-32x32.png">
+    
+    
+        <div class="trm-logo-text">
+            小<span>陈</span>
+        </div>
+    
+</a>
+<!-- logo end -->
+		</div>
+		<div class="trm-right-side">
+			<!-- menu -->
+<div class="trm-menu">
+    <nav>
+        <ul>
+            
+            <li class="menu-item-has-children ">
+                <a  href="/" target="">
+                    首页
+                </a>
+                
+            </li>
+            
+            <li class="menu-item-has-children ">
+                <a  href="/tags/" target="">
+                    标签
+                </a>
+                
+            </li>
+            
+            <li class="menu-item-has-children ">
+                <a  href="/categories/" target="">
+                    分类
+                </a>
+                
+            </li>
+            
+            <li class="menu-item-has-children ">
+                <a  href="/archives/" target="">
+                    归档
+                </a>
+                
+            </li>
+            
+            <li class="menu-item-has-children ">
+                <a data-no-swup href="/about/" target="">
+                    关于我
+                </a>
+                
+            </li>
+            
+        </ul>
+    </nav>
+</div>
+<!-- menu end -->
+			
+    <!-- mode switcher place -->
+    <div class="trm-mode-switcher-place">
+        <div class="trm-mode-switcher">
+            <svg class="symbol-icon " aria-hidden="true">
+    <use xlink:href="#far fa-sun"></use>
+</svg>
+            <input class="tgl tgl-light" id="trm-swich" type="checkbox">
+            <label class="trm-swich" for="trm-swich"></label>
+            <svg class="symbol-icon " aria-hidden="true">
+    <use xlink:href="#far fa-moon"></use>
+</svg>
+        </div>
+    </div>
+    <!-- mode switcher place end -->
+
+			
+    
+    <div id="trm-search-btn" class="trm-search-btn">
+        <svg class="symbol-icon " aria-hidden="true">
+    <use xlink:href="#fas fa-search"></use>
+</svg>
+    </div>
+     
+
+		</div>
+		<div class="trm-menu-btn">
+			<span></span>
+		</div>
+	</div>
+</header>
+            <!-- top bar end -->
+
+            <!-- body -->
+            
+<div class="trm-content-start">
+    <!-- banner -->
+    <div class="trm-banner">
+    
+    <!-- banner cover -->
+    <img style="object-position:top;object-fit:cover;" alt="banner" class="trm-banner-cover" src="/img/banner.png">
+    <!-- banner cover end -->
+    
+
+    <!-- banner content -->
+    <div class="trm-banner-content trm-overlay">
+        <div class="container">
+            <div class="row">
+                
+                <div class="col-lg-4"></div>
+                
+                <div class="col-lg-8">
+
+                    <!-- banner title -->
+                    <div class="trm-banner-text ">
+                        <div class="trm-label trm-mb-20">
+                            NEWS LETTER
+                        </div>
+                        <h1 class="trm-mb-30 trm-hsmb-font">
+                            Linux服务器实训
+                        </h1>
+
+                        
+                            <ul class="trm-breadcrumbs trm-label">
+                                <li>
+                                    <a href="/" class="trm-anima-link">Home</a>
+                                </li>
+                                <li>
+                                    <span>
+                                        2024
+                                    </span>
+                                </li>
+                            </ul>
+                        
+                    </div>
+                    <!-- banner title end -->
+
+                    <!-- scroll hint -->
+                    <span id="scroll-triger" class="trm-scroll-hint-frame">
+                        <div class="trm-scroll-hint"></div>
+                        <span class="trm-label">Scroll down</span>
+                    </span>
+                    <!-- scroll hint end -->
+
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- banner content end -->
+</div>
+    <!-- banner end -->
+    <div class="container">
+        <div class="row">
+            
+                <div id="page-sidebar" class="col-lg-4 hidden-sm">
+                    <!-- main card -->
+                    <div class="trm-main-card-frame trm-sidebar">
+    <div class="trm-main-card"> 
+        <!-- card header -->
+<div class="trm-mc-header">
+    <div class="trm-avatar-frame trm-mb-20">
+        <img alt="Avatar" class="trm-avatar" src="/img/avatar.jpg">
+    </div>
+    <h5 class="trm-name trm-mb-15">
+        小陈
+    </h5>
+    
+</div>
+<!-- card header end -->
+        <!-- sidebar social -->
+
+<div class="trm-divider trm-mb-40 trm-mt-40"></div>
+<div class="trm-social">
+    
+        <a href="https://github.com/chpw421" title="github" rel="nofollow" target="_blank">
+            <svg class="symbol-icon " aria-hidden="true">
+    <use xlink:href="#fab fa-github"></use>
+</svg>
+        </a>
+    
+        <a href="https://gitee.com/ikun_16_0" title="gitee" rel="nofollow" target="_blank">
+            <svg class="symbol-icon " aria-hidden="true">
+    <use xlink:href="#iconfont cg-gitee"></use>
+</svg>
+        </a>
+    
+</div>
+
+<!-- sidebar social end -->
+        <!-- info -->
+<div class="trm-divider trm-mb-40 trm-mt-40"></div>
+<ul class="trm-table trm-mb-20">
+    
+        <li>
+            <div class="trm-label">
+                姓名:
+            </div>
+            <div class="trm-label trm-label-light">
+                小陈
+            </div>
+        </li>
+    
+        <li>
+            <div class="trm-label">
+                地址:
+            </div>
+            <div class="trm-label trm-label-light">
+                君士坦丁堡
+            </div>
+        </li>
+    
+        <li>
+            <div class="trm-label">
+                年龄:
+            </div>
+            <div class="trm-label trm-label-light">
+                20
+            </div>
+        </li>
+    
+</ul>
+<!-- info end -->
+
+        
+    <div class="trm-divider trm-mb-40 trm-mt-40"></div>
+    <!-- action button -->
+    <div class="text-center">
+        <a href="mailto:1002464042@qq.com" class="trm-btn">
+            Contact Me
+            <svg class="symbol-icon " aria-hidden="true">
+    <use xlink:href="#far fa-envelope"></use>
+</svg>
+        </a>
+    </div>
+    <!-- action button end -->
+
+    </div>
+</div>
+                    <!-- main card end -->
+                </div>
+            
+            <div id="page-content" class="col-lg-8">
+                <div class="trm-content" id="trm-content">
+                    <div id="post-info" class="row hidden-sm">
+    <div class="col-sm-4">
+        <div class="trm-card trm-label trm-label-light text-center">
+            <svg class="symbol-icon trm-icon" aria-hidden="true">
+    <use xlink:href="#far fa-calendar-alt"></use>
+</svg><br>
+            06/12
+        </div>
+    </div>
+    <div class="col-sm-4">
+        <div class="trm-card trm-label trm-label-light text-center">
+            <svg class="symbol-icon trm-icon" aria-hidden="true">
+    <use xlink:href="#far fa-clock"></use>
+</svg><br>
+            12:58
+        </div>
+    </div>
+    <div class="col-sm-4">
+        <div id="post-author" class="trm-card trm-label trm-label-light text-center">
+            <svg class="symbol-icon trm-icon" aria-hidden="true">
+    <use xlink:href="#far fa-user"></use>
+</svg><br>
+            小陈
+        </div>
+    </div>
+</div>
+<div class="trm-card ">
+    <article id="article-container" class="trm-publication">
+    <blockquote>
+<p>这是大学实训linux服务与配置用到的操作步骤<br>mysql操作基于Ubuntu 20.04, 其他操作基于CentOS 7</p>
+</blockquote>
+<span id="more"></span>
+<h1 id="1-实验配置"><a href="#1-实验配置" class="headerlink" title="1. 实验配置"></a>1. 实验配置</h1><h2 id="启用firewalld服务"><a href="#启用firewalld服务" class="headerlink" title="启用firewalld服务"></a>启用firewalld服务</h2><p><code>systemctl start firewalld</code></p>
+<h2 id="关闭SElinux"><a href="#关闭SElinux" class="headerlink" title="关闭SElinux"></a>关闭SElinux</h2><p><code>getenforce</code>查看是否为Disable</p>
+<h2 id="配置软件源"><a href="#配置软件源" class="headerlink" title="配置软件源"></a>配置软件源</h2><h3 id="配置centos-7本地源"><a href="#配置centos-7本地源" class="headerlink" title="配置centos 7本地源"></a>配置centos 7本地源</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#! /bin/bash</span></span><br><span class="line"></span><br><span class="line">path=<span class="string">&quot;/etc/yum.repos.d&quot;</span></span><br><span class="line"><span class="keyword">if</span> [ ! -e <span class="string">&quot;<span class="variable">$path</span>&quot;</span> ]; <span class="keyword">then</span></span><br><span class="line">	<span class="built_in">mkdir</span> <span class="string">&quot;<span class="variable">$path</span>&quot;</span></span><br><span class="line"><span class="keyword">else</span></span><br><span class="line">	<span class="built_in">rm</span> -rf <span class="string">&quot;<span class="variable">$path</span>&quot;</span></span><br><span class="line">	<span class="built_in">mkdir</span> <span class="string">&quot;<span class="variable">$path</span>&quot;</span></span><br><span class="line"><span class="keyword">fi</span></span><br><span class="line"></span><br><span class="line">wget -O /etc/yum.repos.d/CentOS-Base.repo http://mirrors.aliyun.com/repo/Centos-7.repo</span><br><span class="line">yum remove epel-release -y &amp;&amp; yum install epel-release -y; </span><br><span class="line">yum clean all &amp;&amp; yum makecache;</span><br><span class="line"></span><br><span class="line">iso=<span class="string">&quot;/mnt/iso&quot;</span></span><br><span class="line"><span class="keyword">if</span> [ ! -e <span class="string">&quot;<span class="variable">$iso</span>&quot;</span> ]; <span class="keyword">then</span></span><br><span class="line">	<span class="built_in">mkdir</span> <span class="variable">$iso</span></span><br><span class="line"><span class="keyword">fi</span>	</span><br><span class="line">mount /dev/cdrom /mnt/iso;</span><br><span class="line">dvd=<span class="string">&quot;/etc/yum.repos.d/dvd.repo&quot;</span></span><br><span class="line"><span class="keyword">if</span> [ -e <span class="string">&quot;<span class="variable">$dvd</span>&quot;</span> ]; <span class="keyword">then</span></span><br><span class="line">	<span class="built_in">rm</span> <span class="variable">$dvd</span></span><br><span class="line"><span class="keyword">else</span></span><br><span class="line">	<span class="built_in">touch</span> <span class="variable">$dvd</span></span><br><span class="line"><span class="keyword">fi</span></span><br><span class="line"><span class="built_in">cat</span> &lt;&lt;<span class="string">EOF &gt;&gt; &quot;$dvd&quot;;</span></span><br><span class="line"><span class="string">[dvd]</span></span><br><span class="line"><span class="string">name=dvd</span></span><br><span class="line"><span class="string">baseurl=file:///mnt/cd0</span></span><br><span class="line"><span class="string">gpgcheck=0</span></span><br><span class="line"><span class="string">enabled=1</span></span><br><span class="line"><span class="string">EOFpriority=1</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">yum -y install yum-priorities; </span></span><br><span class="line"><span class="string">path=&quot;/etc/yum.repos.d/CentOS-Base.repo&quot;</span></span><br><span class="line"><span class="string">if grep -q &quot;priority=2&quot; &quot;$path&quot;; then</span></span><br><span class="line"><span class="string">	echo &quot;已包含&quot;</span></span><br><span class="line"><span class="string">else</span></span><br><span class="line"><span class="string">	sed -i &#x27;/7/a\priority=2&#x27; &quot;$path&quot;;</span></span><br><span class="line"><span class="string">fi		</span></span><br><span class="line"><span class="string">path=&quot;/etc/yum.repos.d/epel.repo&quot;</span></span><br><span class="line"><span class="string">if grep -q &quot;priority=11&quot; &quot;$path&quot;; then</span></span><br><span class="line"><span class="string">	echo &quot;已包含&quot;</span></span><br><span class="line"><span class="string">else</span></span><br><span class="line"><span class="string">	sed -i &#x27;11i\priority=11&#x27; &quot;$path&quot;;</span></span><br><span class="line"><span class="string">fi		</span></span><br><span class="line"><span class="string">yum clean all &amp;&amp; yum makecache;</span></span><br><span class="line"><span class="string">yum install httpd -y;</span></span><br><span class="line"><span class="string">yum repolist;</span></span><br></pre></td></tr></table></figure>
+
+<p>软件源地址: </p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">清华大学软件源: https://mirrors.tuna.tsinghua.edu.cn/help</span><br><span class="line">中科大软件源: https://mirrors.ustc.edu.cn/help</span><br><span class="line">华为云软件源: https://mirrors.huaweicloud.com/home</span><br><span class="line">阿里云软件源: https://developer.aliyun.com/mirror/</span><br><span class="line">上海交大软件源: https://mirrors.sjtug.sjtu.edu.cn/docs/ubuntu</span><br></pre></td></tr></table></figure>
+<p>我使用的是中科大软件源:<br>CentOS 7: </p>
+<ul>
+<li>使用vim(没有就用vi)打开**&#x2F;etc&#x2F;yum.repos.d&#x2F;CentOS-Base.repo**</li>
+<li>把下面的软件源输入进去<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><span class="line">[base]</span><br><span class="line">name=CentOS-<span class="variable">$releasever</span> - Base</span><br><span class="line"><span class="comment">#mirrorlist=http://mirrorlist.centos.org/?release=$releasever&amp;arch=$basearch&amp;repo=os&amp;infra=$infra</span></span><br><span class="line">baseurl=https://mirrors.ustc.edu.cn/centos/<span class="variable">$releasever</span>/os/<span class="variable">$basearch</span>/</span><br><span class="line">gpgcheck=1</span><br><span class="line">gpgkey=file:///etc/pki/rpm-gpg/RPM-GPG-KEY-CentOS-7</span><br><span class="line"><span class="comment">#released updates</span></span><br><span class="line">[updates]</span><br><span class="line">name=CentOS-<span class="variable">$releasever</span> - Updates</span><br><span class="line"><span class="comment">#mirrorlist=http://mirrorlist.centos.org/?release=$releasever&amp;arch=$basearch&amp;repo=updates&amp;infra=$infra</span></span><br><span class="line">baseurl=https://mirrors.ustc.edu.cn/centos/<span class="variable">$releasever</span>/updates/<span class="variable">$basearch</span>/</span><br><span class="line">gpgcheck=1</span><br><span class="line">gpgkey=file:///etc/pki/rpm-gpg/RPM-GPG-KEY-CentOS-7</span><br><span class="line"><span class="comment">#additional packages that may be useful</span></span><br><span class="line">[extras]</span><br><span class="line">name=CentOS-<span class="variable">$releasever</span> - Extras</span><br><span class="line"><span class="comment">#mirrorlist=http://mirrorlist.centos.org/?release=$releasever&amp;arch=$basearch&amp;repo=extras&amp;infra=$infra</span></span><br><span class="line">baseurl=https://mirrors.ustc.edu.cn/centos/<span class="variable">$releasever</span>/extras/<span class="variable">$basearch</span>/</span><br><span class="line">gpgcheck=1</span><br><span class="line">gpgkey=file:///etc/pki/rpm-gpg/RPM-GPG-KEY-CentOS-7</span><br><span class="line"><span class="comment">#additional packages that extend functionality of existing packages</span></span><br><span class="line">[centosplus]</span><br><span class="line">name=CentOS-<span class="variable">$releasever</span> - Plus</span><br><span class="line"><span class="comment">#mirrorlist=http://mirrorlist.centos.org/?release=$releasever&amp;arch=$basearch&amp;repo=centosplus&amp;infra=$infra</span></span><br><span class="line">baseurl=https://mirrors.ustc.edu.cn/centos/<span class="variable">$releasever</span>/centosplus/<span class="variable">$basearch</span>/</span><br><span class="line">gpgcheck=1</span><br><span class="line">enabled=0</span><br><span class="line">gpgkey=file:///etc/pki/rpm-gpg/RPM-GPG-KEY-CentOS-7</span><br></pre></td></tr></table></figure></li>
+<li>使用<code>sudo yum update</code>更新</li>
+</ul>
+<p>Ubuntu 20.04: </p>
+<ul>
+<li>使用vi打开**&#x2F;etc&#x2F;apt&#x2F;sources.list**</li>
+<li>输入软件源: <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 默认注释了源码仓库，如有需要可自行取消注释</span></span><br><span class="line">deb https://mirrors.ustc.edu.cn/ubuntu/ focal main restricted universe multiverse</span><br><span class="line">deb https://mirrors.ustc.edu.cn/ubuntu/ focal-security main restricted universe multiverse</span><br><span class="line">deb https://mirrors.ustc.edu.cn/ubuntu/ focal-updates main restricted universe multiverse</span><br><span class="line">deb https://mirrors.ustc.edu.cn/ubuntu/ focal-backports main restricted universe multiverse</span><br></pre></td></tr></table></figure></li>
+<li>使用<code>sudo apt update</code>更新</li>
+</ul>
+<h1 id="2-使用RDP方式连接linux服务器"><a href="#2-使用RDP方式连接linux服务器" class="headerlink" title="2. 使用RDP方式连接linux服务器"></a>2. 使用RDP方式连接linux服务器</h1><blockquote>
+<p>开通防火墙的3389端口, 即可</p>
+</blockquote>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">firewall-cmd --permanent --add-port=3389/tcp</span><br><span class="line">firewall-cmd --reload <span class="comment"># 使上面的配置生效</span></span><br></pre></td></tr></table></figure>
+
+<h1 id="3-制作dhcp服务器"><a href="#3-制作dhcp服务器" class="headerlink" title="3. 制作dhcp服务器"></a>3. 制作dhcp服务器</h1><blockquote>
+<p>本实验需要用到云计算机A、B和C, 其中A、B装有centos 7, C装有windows xp<br>使用A、B的ens33网卡，C使用本地连接2</p>
+</blockquote>
+<h2 id="dhcp服务安装和配置"><a href="#dhcp服务安装和配置" class="headerlink" title="dhcp服务安装和配置"></a>dhcp服务安装和配置</h2><blockquote>
+<p>在云计算机A中操作</p>
+</blockquote>
+<h3 id="安装"><a href="#安装" class="headerlink" title="安装:"></a>安装:</h3><p>使用<code>sudo yum install dhcp -y</code>安装, 使用<code>dhcpd</code>检查是否成功安装dhcp</p>
+<h3 id="配置"><a href="#配置" class="headerlink" title="配置:"></a>配置:</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">cat</span>&lt;&lt;<span class="string">EOF &gt; /etc/dhcp/dhcpd.conf</span></span><br><span class="line"><span class="string">ddns-update-style none;   #配置DHCP-DNS为不自动更新模式</span></span><br><span class="line"><span class="string">log-facility local7;         #local7以上级别的日志发送到dhcp日志</span></span><br><span class="line"><span class="string">default-lease-time 600;             #默认租约时间长度</span></span><br><span class="line"><span class="string">max-lease-time 3600;              #最大租约时间长度</span></span><br><span class="line"><span class="string">subnet 192.168.24.0 netmask 255.255.255.0 &#123;     #子网号和掩码</span></span><br><span class="line"><span class="string">range 192.168.24.50 192.168.24.100;           #IP地址分配范围</span></span><br><span class="line"><span class="string">option domain-name-servers 192.168.24.1;      #域名服务器地址</span></span><br><span class="line"><span class="string">option domain-name &quot;JQE.com&quot;;              #域名</span></span><br><span class="line"><span class="string">option routers 192.168.24.1;                   #网关地址</span></span><br><span class="line"><span class="string">option broadcast-address 192.168.24.254;       #广播地址</span></span><br><span class="line"><span class="string">&#125;</span></span><br><span class="line"><span class="string">EOF</span></span><br></pre></td></tr></table></figure>
+<h2 id="修改IP"><a href="#修改IP" class="headerlink" title="修改IP"></a>修改IP</h2><ul>
+<li>在A中使用<strong>nmtui</strong>命令工具修改ens33网卡IP为<strong>192.168.24.1</strong>, 然后重新激活网卡</li>
+<li>在B中使用<strong>nmtui</strong>命令修改ens33网卡IP为自动分配</li>
+<li>在C中找到网络连接把本地连接2改成自动分配IP</li>
+</ul>
+<h1 id="4-制作SSH服务器"><a href="#4-制作SSH服务器" class="headerlink" title="4. 制作SSH服务器"></a>4. 制作SSH服务器</h1><ul>
+<li>创建docker虚拟机: <code>docker run -itd  --name nczy --hostname chpw --privileged=true  centos:7  /usr/sbin/init</code></li>
+<li>进入: <code>docker exec -it nczy bash</code></li>
+<li>进入虚拟机可能会没网, 所以在进入之前先: <code>systemctl restart docker</code></li>
+<li>如果还是没网, 就照下面的输: <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 在宿主机</span></span><br><span class="line"><span class="built_in">cat</span>&lt;&lt;<span class="string">EOF &gt; /etc/sysctl.conf</span></span><br><span class="line"><span class="string">	net.ipv4.ip_forward = 1</span></span><br><span class="line"><span class="string">EOF</span></span><br><span class="line">sysctl -p</span><br><span class="line">systemctl restart docker</span><br><span class="line">docker <span class="built_in">exec</span> -it nczy bash <span class="comment"># 启动nczy</span></span><br></pre></td></tr></table></figure></li>
+</ul>
+<p>虚拟机里输入: </p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">yum install openssh-server</span><br><span class="line">systemctl restart sshd --now</span><br><span class="line"><span class="built_in">exit</span></span><br></pre></td></tr></table></figure>
+<p>在宿主机里输入:<br><code>firewall-cmd --zone=public --add-forward-port=port=2222:proto=tcp:toaddr=172.17.0.2:toport=22</code><br>在终端输入:<br><code>ssh root@宿主机IP地址 -p 2222</code></p>
+<h1 id="5-在nczy安装RDP服务-从校园网访问"><a href="#5-在nczy安装RDP服务-从校园网访问" class="headerlink" title="5. 在nczy安装RDP服务,从校园网访问"></a>5. 在nczy安装RDP服务,从校园网访问</h1><ul>
+<li>在虚拟机中输入: <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">yum install -y epel-release   <span class="comment">#添加第三方安装源epel-release</span></span><br><span class="line">yum install -y xrdp</span><br><span class="line">yum groupinstall -y Xfce    <span class="comment"># 基于上面epel-release，得先安装它</span></span><br><span class="line"><span class="built_in">echo</span> <span class="string">&quot;xfce4-session&quot;</span> &gt; ~/.Xclients</span><br><span class="line"><span class="built_in">chmod</span> +x ~/.Xclients</span><br><span class="line">sed -i <span class="string">&#x27;s/ssl_protocols=.*/ssl_protocols=TLSv1/&#x27;</span> /etc/xrdp/xrdp.ini </span><br><span class="line">systemctl start xrdp --now </span><br><span class="line">systemctl <span class="built_in">enable</span> xrdp --now </span><br></pre></td></tr></table></figure></li>
+<li>在宿主机中输入: <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">firewall-cmd --permanent --add-port=3390/tcp</span><br><span class="line">firewall-cmd --reload</span><br><span class="line">firewall-cmd --zone=public --add-forward-port=port=3390:proto=tcp:toaddr=172.17.0.2:toport=3389</span><br></pre></td></tr></table></figure></li>
+</ul>
+<h1 id="6-dns"><a href="#6-dns" class="headerlink" title="6. dns"></a>6. dns</h1><h2 id="添加docker国内镜像"><a href="#添加docker国内镜像" class="headerlink" title="添加docker国内镜像"></a>添加docker国内镜像</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">cat</span>&lt;&lt;<span class="string">EOF &gt; /etc/docker/daemon.json</span></span><br><span class="line"><span class="string">&#123;</span></span><br><span class="line"><span class="string">	&quot;registry-mirrors&quot;: [</span></span><br><span class="line"><span class="string">    &quot;https://9cpn8tt6.mirror.aliyuncs.com&quot;,</span></span><br><span class="line"><span class="string">    &quot;https://dockerproxy.com&quot;,</span></span><br><span class="line"><span class="string">    &quot;https://hub-mirror.c.163.com&quot;,</span></span><br><span class="line"><span class="string">    &quot;https://mirror.baidubce.com&quot;,</span></span><br><span class="line"><span class="string">    &quot;https://ccr.ccs.tencentyun.com&quot;</span></span><br><span class="line"><span class="string"> 	]</span></span><br><span class="line"><span class="string">&#125;</span></span><br><span class="line"><span class="string">EOF</span></span><br></pre></td></tr></table></figure>
+<h2 id="拉取bind服务器"><a href="#拉取bind服务器" class="headerlink" title="拉取bind服务器"></a>拉取bind服务器</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line">systemctl start docker</span><br><span class="line"></span><br><span class="line">docker pull sameersbn/bind</span><br><span class="line"></span><br><span class="line"><span class="built_in">mkdir</span> -p /opt/docker/bind</span><br><span class="line"></span><br><span class="line">lsof -i :53 <span class="comment"># 查看哪些服务监听着53端口</span></span><br><span class="line">systemctl stop dnsmasq <span class="comment"># 暂停dnsmasq服务</span></span><br><span class="line"><span class="built_in">kill</span> -9 PID <span class="comment"># PID在上一条命令显示出了</span></span><br><span class="line"></span><br><span class="line">docker run --name <span class="built_in">bind</span> -d \</span><br><span class="line">--restart=always \</span><br><span class="line">-p 53:53/tcp \</span><br><span class="line">-p 53:53/udp \</span><br><span class="line">-p 10000:10000/tcp \</span><br><span class="line">--volume /opt/docker/bind:/data \</span><br><span class="line">sameersbn/bind</span><br><span class="line"></span><br><span class="line">docker restart <span class="built_in">bind</span></span><br></pre></td></tr></table></figure>
+
+<h1 id="7-安装-mysql"><a href="#7-安装-mysql" class="headerlink" title="7. 安装 mysql"></a>7. 安装 mysql</h1><blockquote>
+<p>基于ubuntu 20.04</p>
+</blockquote>
+<ul>
+<li><p>安装mysql服务<br><code>sudo apt install mysql-server</code></p>
+</li>
+<li><p>启动服务<br><code>sudo service mysql start</code></p>
+</li>
+<li><p>启动服务<br><code>mysql -u root -p</code></p>
+</li>
+<li><p>修改密码和授予远程访问权限</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">CREATE USER <span class="string">&#x27;root&#x27;</span>@<span class="string">&#x27;%&#x27;</span> IDENTIFIED BY <span class="string">&#x27;123456&#x27;</span>; <span class="comment"># 创建一个用户为root并且密码设置为123456</span></span><br><span class="line">GRANT ALL PRIVILEGES ON *.* TO <span class="string">&#x27;root&#x27;</span>@<span class="string">&#x27;%&#x27;</span> WITH GRANT OPTION; <span class="comment"># 授予root用户远程访问权限</span></span><br><span class="line">FLUSH PRIVILEGES; <span class="comment"># 刷新配置</span></span><br></pre></td></tr></table></figure></li>
+<li><p>修改配置文件<br>在<code>/etc/mysql/mysql.cnf</code>文件中输入下面两行</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">[mysqld]</span><br><span class="line">bind-address = 0.0.0.0</span><br></pre></td></tr></table></figure></li>
+</ul>
+<p>把<code>/etc/mysql/mysql.conf.d/mysqld.conf</code>中下面两行注释掉</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">bind-address = 127.0.0.1</span><br><span class="line">mysqlx-bind-address = 127.0.0.1</span><br></pre></td></tr></table></figure>
+
+<p><code>service mysql restart</code></p>
+<h1 id="8-使用python程序向linux系统发送命令"><a href="#8-使用python程序向linux系统发送命令" class="headerlink" title="8. 使用python程序向linux系统发送命令"></a>8. 使用python程序向linux系统发送命令</h1><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> subprocess</span><br><span class="line"></span><br><span class="line">result = subprocess.run(</span><br><span class="line">    [<span class="string">&#x27;ssh&#x27;</span>, <span class="string">&#x27;root@172.16.124.24&#x27;</span>, <span class="string">&#x27;ls -l /&#x27;</span>],</span><br><span class="line">    capture_output=<span class="literal">True</span>,</span><br><span class="line">    text=<span class="literal">True</span>,</span><br><span class="line">    encoding=<span class="string">&#x27;utf-8&#x27;</span>  <span class="comment"># 使用UTF-8编码</span></span><br><span class="line">)</span><br><span class="line"><span class="built_in">print</span>(result.stdout)</span><br></pre></td></tr></table></figure>
+
+
+</article>
+    
+    
+
+</div>
+<div id="post-next-prev" class="row">
+    <div class="col-lg-12">
+        <!-- title -->
+        <h5 class="trm-title-with-divider">
+            Other Articles
+            <span data-number="02"></span>
+        </h5>
+    </div>
+    
+        <div class="col-lg-6">
+    <div class="trm-blog-card trm-scroll-animation">
+        <a href="/2024/06/12/WSL2%E5%AE%89%E8%A3%85%E9%85%8D%E7%BD%AE/" class="trm-cover-frame trm-anima-link">
+            
+            
+                <img alt="cover" class="no-fancybox" src="/img/block.jpg">
+            
+        </a>
+        
+        <div class="trm-card-descr">
+            <div class="trm-label trm-category trm-mb-20">
+                <a href=" /categories/WSL2/">
+                    WSL2
+                </a>
+            </div>
+            <h5>
+                <a href="/2024/06/12/WSL2%E5%AE%89%E8%A3%85%E9%85%8D%E7%BD%AE/" class="trm-anima-link">
+                    WSL2安装配置
+                </a>
+            </h5>
+            <div class="trm-divider trm-mb-20 trm-mt-20"></div>
+            <ul class="trm-card-data trm-label">
+                <li>24/06/12</li>
+                <li>12:58</li>
+                
+                
+            </ul>
+        </div>
+    </div>
+</div>
+    
+    
+        <div class="col-lg-6">
+    <div class="trm-blog-card trm-scroll-animation">
+        <a href="/2024/06/12/%E7%89%A9%E8%81%94%E7%BD%91py%E7%AC%94%E8%AE%B0/" class="trm-cover-frame trm-anima-link">
+            
+            
+                <img alt="cover" class="no-fancybox" src="/img/block.jpg">
+            
+        </a>
+        
+        <div class="trm-card-descr">
+            <div class="trm-label trm-category trm-mb-20">
+                <a href=" /categories/%E7%89%A9%E8%81%94%E7%BD%91/">
+                    物联网
+                </a>
+            </div>
+            <h5>
+                <a href="/2024/06/12/%E7%89%A9%E8%81%94%E7%BD%91py%E7%AC%94%E8%AE%B0/" class="trm-anima-link">
+                    物联网Py笔记
+                </a>
+            </h5>
+            <div class="trm-divider trm-mb-20 trm-mt-20"></div>
+            <ul class="trm-card-data trm-label">
+                <li>24/06/12</li>
+                <li>12:58</li>
+                
+                
+            </ul>
+        </div>
+    </div>
+</div>
+    
+</div>
+
+    
+
+
+
+                    <div class="trm-divider footer-divider"></div>
+
+                    <!-- footer -->
+                    <footer class="trm-scroll-animation">
+
+    
+        <div class="trm-footer-item">
+            <a rel="noopener" href="https://beian.miit.gov.cn/" target="_blank"></a>
+        </div>
+    
+
+    
+
+    
+        <div class="trm-footer-item">
+            <span>
+                Powered by <a href="https://hexo.io" target="_blank" rel="noopener">Hexo</a> v7.3.0
+            </span>
+            <span class="footer-separator" data-separator=" | "></span>
+            <span> 
+                Theme - 
+                <a rel="noopener" href='https://github.com/MaLuns/hexo-theme-async' target='_blank'>Async</a>
+                v2.1.0-beta.2
+            </span>
+        </div>
+      
+
+    
+        <div class="trm-footer-item">
+            The blog has been lovely to run <span id="since" class="trm-accent-color"></span> day
+        </div>
+     
+
+     
+</footer>
+
+<script>
+    function show_date_time () {
+        var BirthDay = new Date("07/23/2024 20:26:00");
+        var today = new Date();
+        var timeold = (today.getTime() - BirthDay.getTime());
+        var msPerDay = 24 * 60 * 60 * 1000
+        var day = Math.floor(timeold / msPerDay)
+        since.innerHTML = day
+    }
+    show_date_time()
+</script>
+ 
+                    <!-- footer end -->
+
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+            <!-- body end -->
+
+            
+
+    <div id="post-toc" class="post-toc">
+        <ol class="toc"><li class="toc-item toc-level-1"><a rel="nofollow" class="toc-link" href="#1-实验配置"  data-scroll-to="#1-实验配置"><span class="toc-number">1.</span> <span class="toc-text">1. 实验配置</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a rel="nofollow" class="toc-link" href="#启用firewalld服务"  data-scroll-to="#启用firewalld服务"><span class="toc-number">1.1.</span> <span class="toc-text">启用firewalld服务</span></a></li><li class="toc-item toc-level-2"><a rel="nofollow" class="toc-link" href="#关闭SElinux"  data-scroll-to="#关闭SElinux"><span class="toc-number">1.2.</span> <span class="toc-text">关闭SElinux</span></a></li><li class="toc-item toc-level-2"><a rel="nofollow" class="toc-link" href="#配置软件源"  data-scroll-to="#配置软件源"><span class="toc-number">1.3.</span> <span class="toc-text">配置软件源</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a rel="nofollow" class="toc-link" href="#配置centos-7本地源"  data-scroll-to="#配置centos-7本地源"><span class="toc-number">1.3.1.</span> <span class="toc-text">配置centos 7本地源</span></a></li></ol></li></ol></li><li class="toc-item toc-level-1"><a rel="nofollow" class="toc-link" href="#2-使用RDP方式连接linux服务器"  data-scroll-to="#2-使用RDP方式连接linux服务器"><span class="toc-number">2.</span> <span class="toc-text">2. 使用RDP方式连接linux服务器</span></a></li><li class="toc-item toc-level-1"><a rel="nofollow" class="toc-link" href="#3-制作dhcp服务器"  data-scroll-to="#3-制作dhcp服务器"><span class="toc-number">3.</span> <span class="toc-text">3. 制作dhcp服务器</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a rel="nofollow" class="toc-link" href="#dhcp服务安装和配置"  data-scroll-to="#dhcp服务安装和配置"><span class="toc-number">3.1.</span> <span class="toc-text">dhcp服务安装和配置</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a rel="nofollow" class="toc-link" href="#安装"  data-scroll-to="#安装"><span class="toc-number">3.1.1.</span> <span class="toc-text">安装:</span></a></li><li class="toc-item toc-level-3"><a rel="nofollow" class="toc-link" href="#配置"  data-scroll-to="#配置"><span class="toc-number">3.1.2.</span> <span class="toc-text">配置:</span></a></li></ol></li><li class="toc-item toc-level-2"><a rel="nofollow" class="toc-link" href="#修改IP"  data-scroll-to="#修改IP"><span class="toc-number">3.2.</span> <span class="toc-text">修改IP</span></a></li></ol></li><li class="toc-item toc-level-1"><a rel="nofollow" class="toc-link" href="#4-制作SSH服务器"  data-scroll-to="#4-制作SSH服务器"><span class="toc-number">4.</span> <span class="toc-text">4. 制作SSH服务器</span></a></li><li class="toc-item toc-level-1"><a rel="nofollow" class="toc-link" href="#5-在nczy安装RDP服务-从校园网访问"  data-scroll-to="#5-在nczy安装RDP服务-从校园网访问"><span class="toc-number">5.</span> <span class="toc-text">5. 在nczy安装RDP服务,从校园网访问</span></a></li><li class="toc-item toc-level-1"><a rel="nofollow" class="toc-link" href="#6-dns"  data-scroll-to="#6-dns"><span class="toc-number">6.</span> <span class="toc-text">6. dns</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a rel="nofollow" class="toc-link" href="#添加docker国内镜像"  data-scroll-to="#添加docker国内镜像"><span class="toc-number">6.1.</span> <span class="toc-text">添加docker国内镜像</span></a></li><li class="toc-item toc-level-2"><a rel="nofollow" class="toc-link" href="#拉取bind服务器"  data-scroll-to="#拉取bind服务器"><span class="toc-number">6.2.</span> <span class="toc-text">拉取bind服务器</span></a></li></ol></li><li class="toc-item toc-level-1"><a rel="nofollow" class="toc-link" href="#7-安装-mysql"  data-scroll-to="#7-安装-mysql"><span class="toc-number">7.</span> <span class="toc-text">7. 安装 mysql</span></a></li><li class="toc-item toc-level-1"><a rel="nofollow" class="toc-link" href="#8-使用python程序向linux系统发送命令"  data-scroll-to="#8-使用python程序向linux系统发送命令"><span class="toc-number">8.</span> <span class="toc-text">8. 使用python程序向linux系统发送命令</span></a></li></ol>
+    </div>
+
+            
+<div class="trm-fixed-container">
+    
+        <div class="trm-fixed-btn post-toc-btn" data-title="Open toc">
+            <svg class="symbol-icon " aria-hidden="true">
+    <use xlink:href="#fas fa-th-list"></use>
+</svg>
+        </div>
+    
+    
+        <div class="trm-fixed-btn" data-title="Read Mode" onclick="asyncFun.switchReadMode()">
+            <svg class="symbol-icon " aria-hidden="true">
+    <use xlink:href="#fas fa-book-reader"></use>
+</svg>
+        </div>
+    
+    
+        <div class="trm-fixed-btn" data-title="Toggle between single-column and double-column" onclick="asyncFun.switchSingleColumn()">
+            <svg class="symbol-icon " aria-hidden="true">
+    <use xlink:href="#fas fa-arrows-alt-h"></use>
+</svg>
+        </div>
+    
+    <div id="trm-back-top" class="trm-fixed-btn" data-title="Back To Top">
+        <svg class="symbol-icon " aria-hidden="true">
+    <use xlink:href="#fas fa-arrow-up"></use>
+</svg>
+    </div>
+</div>
+        </div>
+      </div>
+      <!-- scroll container end -->
+  </div>
+  <!-- app wrapper end -->
+
+  
+    <div class="trm-search-popup">
+        <div class="trm-search-wrapper">
+            <div class="form trm-search-form">
+                <div class="trm-search-input-icon">
+                    <svg class="symbol-icon " aria-hidden="true">
+    <use xlink:href="#fas fa-search"></use>
+</svg>
+                </div>
+                <input class="trm-search-input" type="text" placeholder="Searching...">
+                <div class="trm-search-btn-close">
+                    <svg class="symbol-icon " aria-hidden="true">
+    <use xlink:href="#fas fa-times"></use>
+</svg>
+                </div>
+            </div>
+            <div class="trm-search-result-container">
+                <div class="trm-search-empty">
+                    Please enter keywords to search
+                </div>
+            </div>
+            <div class="trm-search-footer">
+                <div class="trm-search-stats"></div>
+                <ul class="trm-search-commands">
+                    <li>
+                        <kbd class="command-palette-commands-key">
+                            <svg width="15" height="15" aria-label="Escape key" role="img">
+                                <g fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
+                                    stroke-width="1.2">
+                                    <path
+                                        d="M13.6167 8.936c-.1065.3583-.6883.962-1.4875.962-.7993 0-1.653-.9165-1.653-2.1258v-.5678c0-1.2548.7896-2.1016 1.653-2.1016.8634 0 1.3601.4778 1.4875 1.0724M9 6c-.1352-.4735-.7506-.9219-1.46-.8972-.7092.0246-1.344.57-1.344 1.2166s.4198.8812 1.3445.9805C8.465 7.3992 8.968 7.9337 9 8.5c.032.5663-.454 1.398-1.4595 1.398C6.6593 9.898 6 9 5.963 8.4851m-1.4748.5368c-.2635.5941-.8099.876-1.5443.876s-1.7073-.6248-1.7073-2.204v-.4603c0-1.0416.721-2.131 1.7073-2.131.9864 0 1.6425 1.031 1.5443 2.2492h-2.956">
+                                    </path>
+                                </g>
+                            </svg>
+                        </kbd>
+                        <span class="command-palette-Label">to close</span>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+  <!-- Plugin -->
+
+
+
+
+    
+    
+<script src="https://unpkg.com/@fancyapps/ui@4.0/dist/fancybox.umd.js"></script>
+
+    
+
+    
+
+    
+        
+<script src="https://unpkg.com/hexo-generator-searchdb@1.4.0/dist/search.js"></script>
+
+        <script src="https://unpkg.com/hexo-theme-async@2.1.0-beta.2/source/js/plugins/local_search.js?v=2.1.0-beta.2"></script>
+    
+
+    <!-- 数学公式 -->
+    
+
+    <!-- 评论插件 -->
+    
+        
+
+        
+    
+
+
+
+<!-- CDN -->
+
+
+    
+<script src="/demo.js"></script>
+
+
+    
+
+    
+
+
+
+
+    <!-- Service Worker -->
+    
+    <!-- baidu push -->
+    
+    <script data-swup-reload-script>
+        (function () {
+            var bp = document.createElement('script');
+            var curProtocol = window.location.protocol.split(':')[0];
+            if (curProtocol === 'https') {
+                bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';
+            }
+            else {
+                bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+            }
+            var s = document.getElementsByTagName("script")[0];
+            s.parentNode.insertBefore(bp, s);
+        })();
+    </script>
+
+
+
+<script id="async-script" src="https://unpkg.com/hexo-theme-async@2.1.0-beta.2/source/js/main.js?v=2.1.0-beta.2"></script>
+
+</body>
+
+</html>

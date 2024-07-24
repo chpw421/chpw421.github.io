@@ -1,0 +1,592 @@
+<?xml version="1.0" encoding="utf-8"?>
+<search>
+  <entry>
+    <title>GitHub相关操作笔记</title>
+    <url>/2024/06/12/Git%E6%9C%AC%E5%9C%B0%E8%BF%9C%E7%A8%8B%E6%8E%A8%E9%80%81/</url>
+    <content><![CDATA[<h1 id="GitHub本地配置"><a href="#GitHub本地配置" class="headerlink" title="GitHub本地配置"></a>GitHub本地配置</h1><span id="more"></span>
+
+<h2 id="配置本地Git全局设置"><a href="#配置本地Git全局设置" class="headerlink" title="配置本地Git全局设置"></a>配置本地Git全局设置</h2><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">git config --global user.name <span class="string">&quot;your_github_username&quot;</span></span><br><span class="line">git config --global user.email <span class="string">&quot;your_github_email@outlook.com&quot;</span></span><br></pre></td></tr></table></figure>
+
+<h2 id="创建一个GitHub本地仓库"><a href="#创建一个GitHub本地仓库" class="headerlink" title="创建一个GitHub本地仓库"></a>创建一个GitHub本地仓库</h2><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="built_in">cd</span> e:\NoteBook                  <span class="comment"># 新建一个文件夹, 使用cd进入</span></span><br><span class="line">git init                        <span class="comment"># 仓库初始化</span></span><br><span class="line">git add *                       <span class="comment"># 把本地仓库中的内容全添加</span></span><br><span class="line">git commit -m <span class="string">&quot;first commit&quot;</span>    <span class="comment"># 提交内容, &quot;first commit&quot;是描述, 不会写就随便填</span></span><br><span class="line">git branch -M main              <span class="comment"># </span></span><br><span class="line">git remote add origin git@github.com:RestorerOfTheWorld/NoteBook.git</span><br><span class="line">git push -u origin main         <span class="comment"># 把本地仓库推送到GitHub仓库上</span></span><br></pre></td></tr></table></figure>
+<h2 id="日常推"><a href="#日常推" class="headerlink" title="日常推"></a>日常推</h2><blockquote>
+<p>新建后, 以后可以用下面的命令把日常更新的内容推送到GitHub仓库中去</p>
+</blockquote>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">git add . </span><br><span class="line">git commit -m <span class="string">&quot;commit&quot;</span></span><br><span class="line">git push</span><br></pre></td></tr></table></figure>
+<h2 id="更新同步本地-远程URL"><a href="#更新同步本地-远程URL" class="headerlink" title="更新同步本地&#x2F;远程URL"></a>更新同步本地&#x2F;远程URL</h2><blockquote>
+<p>如果更新了GitHub用户名可以使用下面的命令把本地Git的用户名同步成GitHub上的</p>
+</blockquote>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">git remote -v</span><br><span class="line">git remote set-url origin new_url</span><br><span class="line">git pull origin main</span><br></pre></td></tr></table></figure>
+
+<h1 id="Git下载"><a href="#Git下载" class="headerlink" title="Git下载"></a>Git下载</h1><p>Windows下载: <code>winget install Git.Git</code></p>
+<h2 id="Linux下载"><a href="#Linux下载" class="headerlink" title="Linux下载"></a>Linux下载</h2><ul>
+<li><p>Debian&#x2F;Ubuntu：<code>sudo apt install git</code></p>
+</li>
+<li><p>CentOS&#x2F;Fedora：<code>sudo yum install git 或 sudo dnf install git</code></p>
+</li>
+<li><p>Arch&#x2F;Manjaro：<code>sudo pacman -S git</code></p>
+</li>
+<li><p>MacOS下载：<code>brew install git</code></p>
+</li>
+</ul>
+]]></content>
+      <categories>
+        <category>Github</category>
+      </categories>
+      <tags>
+        <tag>GitHub</tag>
+        <tag>操作</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Markdown语法</title>
+    <url>/2024/06/12/Markdown%E8%AF%AD%E6%B3%95(%E5%9F%BA%E7%A1%80%E6%89%A9%E5%B1%95)/</url>
+    <content><![CDATA[<blockquote>
+<p>markdown语法网站 <a href="https://markdown.com.cn/intro.html">markdown</a></p>
+</blockquote>
+<h1 id="一、-基础"><a href="#一、-基础" class="headerlink" title="一、 基础"></a>一、 基础</h1><span id="more"></span>
+
+<h2 id="1-标题"><a href="#1-标题" class="headerlink" title="1. 标题"></a>1. 标题</h2><ol>
+<li>语法：<code>### 标题</code></li>
+<li>用法：井号加空格，井号越多、标题越小，井号越少、标题越大</li>
+</ol>
+<h2 id="2-段落"><a href="#2-段落" class="headerlink" title="2. 段落"></a>2. 段落</h2><ol>
+<li>用法：空白行分隔</li>
+</ol>
+<h2 id="3-换行"><a href="#3-换行" class="headerlink" title="3. 换行"></a>3. 换行</h2><ol>
+<li>用法：文本末尾加两个空格和回车</li>
+</ol>
+<h2 id="4-强调"><a href="#4-强调" class="headerlink" title="4. 强调"></a>4. 强调</h2><h3 id="4-1-粗体"><a href="#4-1-粗体" class="headerlink" title="4.1 粗体"></a>4.1 粗体</h3><pre><code>  1. 语法：`**文本**`
+  2. 用法：加粗部分的两侧各添加两个星号
+</code></pre>
+<h3 id="4-2-斜体"><a href="#4-2-斜体" class="headerlink" title="4.2 斜体"></a>4.2 斜体</h3><pre><code>  1. 语法： `*文本*或_文本_`
+  2. 用法：单词或短语前后添加一个星号或下划线
+</code></pre>
+<h2 id="5-引用"><a href="#5-引用" class="headerlink" title="5. 引用"></a>5. 引用</h2><ol>
+<li>语法：<code>&gt; 文本</code></li>
+<li>用法：要创建块引用，请在段落前添加一个 &gt; 符号，可以嵌套引用、多段落引用、支持少量markdown语法元素</li>
+</ol>
+<h2 id="6-列表"><a href="#6-列表" class="headerlink" title="6. 列表"></a>6. 列表</h2><h3 id="5-1-有序列表"><a href="#5-1-有序列表" class="headerlink" title="5.1 有序列表"></a>5.1 有序列表</h3><pre><code>  1. 语法：`1. 文本`
+  2. 用法：在每个列表项前添加数字并紧跟一个英文句点
+</code></pre>
+<h3 id="5-2-无需列表"><a href="#5-2-无需列表" class="headerlink" title="5.2 无需列表"></a>5.2 无需列表</h3><pre><code>  1. 语法：`- 文本、 * 文本或+ 文本`
+  2. 用法：在每个列表项前面添加破折号 (-)、星号 (*) 或加号 (+)
+</code></pre>
+<h2 id="7-代码"><a href="#7-代码" class="headerlink" title="7. 代码"></a>7. 代码</h2><ol>
+<li>语法：<code>文本</code></li>
+<li>用法：要将单词或短语表示为代码，请将其包裹在反引号 (`) 中。</li>
+</ol>
+<h2 id="8-分隔线"><a href="#8-分隔线" class="headerlink" title="8. 分隔线"></a>8. 分隔线</h2><ol>
+<li>语法：<code>*** 、--- 或___</code></li>
+<li>用法：在单独一行上使用三个或多个星号 (***)、破折号 (—) 或下划线 (___) ，并且不能包含其他内容。</li>
+</ol>
+<h2 id="9-链接"><a href="#9-链接" class="headerlink" title="9. 链接"></a>9. 链接</h2><ol>
+<li>语法：<code>[超链接显示名](超链接地址 &quot;超链接title&quot;)</code></li>
+<li>用法：链接文本放在中括号内，链接地址放在后面的括号中，链接title可选。</li>
+</ol>
+<h2 id="10-图片"><a href="#10-图片" class="headerlink" title="10. 图片"></a>10. 图片</h2><ol>
+<li>语法：<code>![图片alt](图片链接 &quot;图片title&quot;</code></li>
+<li>用法：要添加图像，请使用感叹号 (!), 然后在方括号增加替代文本，图片链接放在圆括号里，括号里的链接后可以增加一个可选的图片标题文本。</li>
+</ol>
+<h2 id="11-转义字符"><a href="#11-转义字符" class="headerlink" title="11. 转义字符"></a>11. 转义字符</h2><ol>
+<li>用法：要显示原本用于格式化 Markdown 文档的字符，请在字符前面添加反斜杠字符 \ 。</li>
+</ol>
+<h1 id="二、-扩展"><a href="#二、-扩展" class="headerlink" title="二、 扩展"></a>二、 扩展</h1><h2 id="1-表格"><a href="#1-表格" class="headerlink" title="1. 表格"></a>1. 表格</h2><ol>
+<li><p>语法：</p>
+<table>
+<thead>
+<tr>
+<th>Syntax</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>Header</td>
+<td>Title</td>
+</tr>
+<tr>
+<td>Paragraph</td>
+<td>Text</td>
+</tr>
+</tbody></table>
+</li>
+<li><p>用法：要添加表，请使用三个或多个连字符（—）创建每列的标题，并使用管道（|）分隔每列。您可以选择在表的任一端添加管道。<a href="https://www.tablesgenerator.com/markdown_tables">表格</a></p>
+</li>
+</ol>
+<h2 id="2-围栏代码块"><a href="#2-围栏代码块" class="headerlink" title="2. 围栏代码块"></a>2. 围栏代码块</h2><ol>
+<li><p>语法：</p>
+<figure class="highlight css"><table><tr><td class="code"><pre><span class="line">&#123;</span><br><span class="line">&quot;firstName&quot;: <span class="string">&quot;John&quot;</span>,</span><br><span class="line"><span class="string">&quot;lastName&quot;</span>: <span class="string">&quot;Smith&quot;</span>,</span><br><span class="line"><span class="string">&quot;age&quot;</span>: <span class="number">25</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>用法：Markdown基本语法允许您通过将行缩进四个空格或一个制表符来创建代码块。如果发现不方便，请尝试使用受保护的代码块。根据Markdown处理器或编辑器的不同，您将在代码块之前和之后的行上使用三个反引号（```）或三个波浪号（~~~）。</p>
+</li>
+</ol>
+<h2 id="3-脚注"><a href="#3-脚注" class="headerlink" title="3. 脚注"></a>3. 脚注</h2><ol>
+<li><p>语法：</p>
+<p><a href="%E8%84%9A%E6%B3%A8%E9%87%8A%E4%B9%89">^1</a>文本</p>
+</li>
+<li><p>用法：要创建脚注参考，请在方括号（[^1]）内添加插入符号和标识符。标识符可以是数字或单词，但不能包含空格或制表符。标识符仅将脚注参考与脚注本身相关联-在输出中，脚注按顺序编号。</p>
+</li>
+</ol>
+<h2 id="4-删除线"><a href="#4-删除线" class="headerlink" title="4. 删除线"></a>4. 删除线</h2><ol>
+<li>语法：<code>~~文本~~</code></li>
+<li>用法：您可以通过在单词中心放置一条水平线来删除单词。结果看起来<del>像这样</del>。此功能使您可以指示某些单词是一个错误，要从文档中删除。若要删除单词，请在单词前后使用两个波浪号~~</li>
+</ol>
+<h2 id="5-任务列表语法"><a href="#5-任务列表语法" class="headerlink" title="5. 任务列表语法"></a>5. 任务列表语法</h2><ol>
+<li><p>语法：</p>
+<ul>
+<li><input checked="" disabled="" type="checkbox"> Write the press release</li>
+<li><input checked="" disabled="" type="checkbox"> Update the website</li>
+<li><input disabled="" type="checkbox"> Contact the media</li>
+</ul>
+</li>
+<li><p>用法：任务列表使您可以创建带有复选框的项目列表。在支持任务列表的Markdown应用程序中，复选框将显示在内容旁边。要创建任务列表，请在任务列表项之前添加破折号-和方括号[ ]，并在[ ]前面加上空格。要选择一个复选框，请在方括号[x]之间添加 x</p>
+</li>
+</ol>
+<h2 id="6-使用Emoji表情"><a href="#6-使用Emoji表情" class="headerlink" title="6. 使用Emoji表情"></a>6. 使用Emoji表情</h2><ol>
+<li>用法：在 <a href="https://emojipedia.org/">emoji</a>网站复制</li>
+</ol>
+]]></content>
+      <categories>
+        <category>markdown</category>
+      </categories>
+      <tags>
+        <tag>Markdown</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>SSH使用教程</title>
+    <url>/2024/06/12/SSH%E4%BD%BF%E7%94%A8%E6%95%99%E7%A8%8B/</url>
+    <content><![CDATA[<h1 id="SSH密码登录"><a href="#SSH密码登录" class="headerlink" title="SSH密码登录"></a>SSH密码登录</h1><p><code>ssh root@172.16.124.24 #用户名@主机名</code></p>
+<span id="more"></span>
+
+<h1 id="SSH免密登录"><a href="#SSH免密登录" class="headerlink" title="SSH免密登录"></a>SSH免密登录</h1><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">ssh-keygen -t rsa <span class="comment"># 生成密钥</span></span><br><span class="line">scp C:\Users\Admin\.ssh\id_rsa.pub root@172.16.124.24:/root/.ssh/id_rsa.pub.windows <span class="comment"># 把密钥文件拷贝到linux服务器上的.ssh文件下并改名</span></span><br><span class="line">接下来进入linux服务器把密钥文件的内容复制到anthorized_keys文件里</span><br><span class="line"></span><br><span class="line">ssh root@172.16.124.24 </span><br><span class="line"><span class="built_in">cd</span> ~/.ssh</span><br><span class="line"><span class="built_in">cat</span> id_rsa.pub.windows &gt;&gt; authorized_keys</span><br><span class="line">接下来登录linux服务器就不需要输入密码了</span><br><span class="line"></span><br><span class="line">ssh root@172.16.124.24</span><br></pre></td></tr></table></figure>
+
+<h1 id="SSH密钥生成"><a href="#SSH密钥生成" class="headerlink" title="SSH密钥生成"></a>SSH密钥生成</h1><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="comment">#linux没有的话下载openssh</span></span><br><span class="line">ssh-keygen -t ed25519 -C <span class="string">&quot;your_name@email.com&quot;</span></span><br><span class="line"><span class="built_in">cat</span> ~/.ssh/id_ed25519.pub</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>请在git bash或powershell中操作<br>登录github，点击头像，点击设置，找到SSH and GPG keys选项，点击SSH keys右边的New SSH key按钮，标题给个恰当的密钥名字，把cat ~&#x2F;.ssh&#x2F;id_ed25519.pub的输出全部复制进Key里面，单击Add SSH key，接着输入你的github登录密码<br><code>ssh -T git@github.com #在终端中输入</code><br>末尾出现下面的代表成功<br>Hi your_name! You’ve successfully authenticated, but GitHub does not provide shell access.<br>可以使用ssh下载方式了<br><code>git clone --depth=1 git@github.com:ryanoasis/nerd-fonts.git</code><br>–depth&#x3D;1: 只下载最近一次的提交版本，可以避免把所有的历史提交记录下载下来</p>
+</blockquote>
+]]></content>
+      <categories>
+        <category>SSH</category>
+      </categories>
+      <tags>
+        <tag>SSH</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>VIM操作</title>
+    <url>/2024/06/12/VIM%E5%AE%89%E8%A3%85%E5%92%8C%E6%93%8D%E4%BD%9C/</url>
+    <content><![CDATA[<h1 id="普通模式"><a href="#普通模式" class="headerlink" title="普通模式"></a>普通模式</h1><span id="more"></span>
+<blockquote>
+<p>使用Esc键进入</p>
+</blockquote>
+<p>h&#x2F;j&#x2F;k&#x2F;l: 分别是左&#x2F;上&#x2F;右&#x2F;下</p>
+<p>o: 向下插入一行</p>
+<p>O: 向上插入一行</p>
+<p>w: 词首向前移动</p>
+<p>e: 词尾向前移动</p>
+<p>b: 词首向后移动</p>
+<p>u: 撤销</p>
+<p>ctrl+r: 复原操作</p>
+<p>ctrl+q: 矩形选择</p>
+<p>V: 选择行</p>
+<p>v: 选择</p>
+<p>p: 粘贴</p>
+<p>y: 复制</p>
+<p>yy: 复制行</p>
+<p>dd: 删除行</p>
+<p>x: 删除字符</p>
+<p>dw: 删除词</p>
+<p>^&#x2F;$: 行首&#x2F;行尾</p>
+<p>gg: 定位到文件第一行, 第一个字符</p>
+<p>G: 定位到文件末尾行, 最后一个字符</p>
+<h1 id="插入模式"><a href="#插入模式" class="headerlink" title="插入模式"></a>插入模式</h1><p>i: 光标前插入</p>
+<p>I: 行首插入</p>
+<p>a: 光标后插入</p>
+<p>A: 行尾插入</p>
+<h1 id="EX模式"><a href="#EX模式" class="headerlink" title="EX模式"></a>EX模式</h1><blockquote>
+<p>使用**:**进入</p>
+</blockquote>
+<p>:set nu : 设置行号</p>
+<p>:数字 :切换到对应行去 </p>
+<p>:wq : 保存并退出</p>
+<p>:x : 和上一个基本一样, 不同的是如果未修改文件, 修改时间也不变</p>
+<p>:%s&#x2F;被替换字符&#x2F;替换字符&#x2F;g : 全文替换</p>
+<p>:&lt;’,’&gt;s&#x2F;被替换字符&#x2F;替换字符&#x2F;g : 选定区域替换</p>
+]]></content>
+      <categories>
+        <category>vim</category>
+      </categories>
+      <tags>
+        <tag>VIM</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Typora使用方法</title>
+    <url>/2019/10/30/Typora%E7%AC%94%E8%AE%B0%E4%BD%BF%E7%94%A8%E6%96%B9%E6%B3%95/</url>
+    <content><![CDATA[<h1 id="一、标题"><a href="#一、标题" class="headerlink" title="一、标题"></a>一、标题</h1><span id="more"></span>
+
+<ol>
+<li><p>一共有6级标题，对应快捷键ctrl+ 1到6</p>
+</li>
+<li><p>ctrl+0可以把选中文本转换成普通文本</p>
+</li>
+<li><p>ctrl+加号&#x2F;减号 对标题级别进行切换</p>
+</li>
+</ol>
+<h1 id="二、段落"><a href="#二、段落" class="headerlink" title="二、段落"></a>二、段落</h1><h2 id="1-换行"><a href="#1-换行" class="headerlink" title="1. 换行"></a>1. 换行</h2><p>大换行：enter键</p>
+<blockquote>
+<p>  这是一个段落</p>
+<p>  这是一个段落</p>
+</blockquote>
+<p>小换行：shift+enter键</p>
+<p>效果：</p>
+<blockquote>
+<p>  这是一个段落<br>  这是一个段落</p>
+</blockquote>
+<h2 id="2-分割线"><a href="#2-分割线" class="headerlink" title="2. 分割线"></a>2. 分割线</h2><p>—或***+回车</p>
+<p>效果：</p>
+<blockquote>
+<hr>
+</blockquote>
+<h1 id="三、文字显示"><a href="#三、文字显示" class="headerlink" title="三、文字显示"></a>三、文字显示</h1><h2 id="1-字体"><a href="#1-字体" class="headerlink" title="1. 字体"></a>1. 字体</h2><ul>
+<li><p>粗体：一对双星号	快捷键：ctrl+B</p>
+<p>效果：</p>
+<blockquote>
+<p>  <strong>文本</strong></p>
+</blockquote>
+</li>
+<li><p>删除线：一对双飘号	快捷键：shift+alt+5</p>
+<p>效果：</p>
+<blockquote>
+<p>  <del>文本</del></p>
+</blockquote>
+</li>
+<li><p>下划线：一对u标签	快捷键：ctrl+U</p>
+<p>效果：</p>
+<blockquote>
+<p>  <u>文本</u></p>
+</blockquote>
+</li>
+<li><p>斜体：一对单星号	快捷键：ctrl+I</p>
+<p>效果：</p>
+<blockquote>
+<p>  <em>文本</em></p>
+</blockquote>
+</li>
+<li><p>高亮：一对双等号</p>
+<p>效果：</p>
+<blockquote>
+<p>  &#x3D;&#x3D;文本&#x3D;&#x3D;</p>
+</blockquote>
+</li>
+</ul>
+<h2 id="2-上下标"><a href="#2-上下标" class="headerlink" title="2. 上下标"></a>2. 上下标</h2><p>上标：x^2^</p>
+<p>下标：x<del>2</del></p>
+<h1 id="四、列表"><a href="#四、列表" class="headerlink" title="四、列表"></a>四、列表</h1><h2 id="1-无序列表"><a href="#1-无序列表" class="headerlink" title="1. 无序列表"></a>1. 无序列表</h2><p>*&#x2F;-&#x2F;+ +空格</p>
+<p>快捷键：ctrl+shift+]</p>
+<h2 id="2-有序列表"><a href="#2-有序列表" class="headerlink" title="2. 有序列表"></a>2. 有序列表</h2><p>数字+.+空格</p>
+<p>快捷键：ctrl+shift+[</p>
+<h2 id="3-任务列表"><a href="#3-任务列表" class="headerlink" title="3. 任务列表"></a>3. 任务列表</h2><p><code>- [ ] 或者- [x] </code></p>
+<p>效果：</p>
+<blockquote>
+<ul>
+<li><p><input disabled="" type="checkbox"> 
+吃早餐</p>
+</li>
+<li><p><input checked="" disabled="" type="checkbox"> 
+背单词</p>
+</li>
+</ul>
+</blockquote>
+<h1 id="五、区块显示"><a href="#五、区块显示" class="headerlink" title="五、区块显示"></a>五、区块显示</h1><p>大于符号+空格</p>
+<p>效果：</p>
+<blockquote>
+<blockquote>
+</blockquote>
+<blockquote>
+<blockquote>
+</blockquote>
+</blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+<h1 id="六、代码显示"><a href="#六、代码显示" class="headerlink" title="六、代码显示"></a>六、代码显示</h1><h2 id="1-行内代码"><a href="#1-行内代码" class="headerlink" title="1. 行内代码"></a>1. 行内代码</h2><p><code>文本</code> </p>
+<p>快捷键：ctrl+shift+&#96;</p>
+<h2 id="2-代码块"><a href="#2-代码块" class="headerlink" title="2. 代码块"></a>2. 代码块</h2><figure class="highlight text"><table><tr><td class="code"><pre><span class="line">文本</span><br></pre></td></tr></table></figure>
+
+<p>快捷键：ctrl+shift+K</p>
+<h1 id="七、链接"><a href="#七、链接" class="headerlink" title="七、链接"></a>七、链接</h1><figure class="highlight text"><table><tr><td class="code"><pre><span class="line">www.baidu.com</span><br><span class="line">[百度一下](https://www.baidu.com)</span><br><span class="line">[百度一下](https://www.baidu.com &quot;https://www.baidu.com&quot;)</span><br></pre></td></tr></table></figure>
+
+<p>快捷键：ctrl+K</p>
+<h1 id="八、脚注"><a href="#八、脚注" class="headerlink" title="八、脚注"></a>八、脚注</h1><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">[^文本]</span><br><span class="line">[^文本]:解释说明</span><br></pre></td></tr></table></figure>
+
+<h1 id="九、图片插入"><a href="#九、图片插入" class="headerlink" title="九、图片插入"></a>九、图片插入</h1><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">![不显示文字](图片路径 &quot;图片标题&quot;)</span><br></pre></td></tr></table></figure>
+
+<p>快捷键：ctrl+shift+I</p>
+<h1 id="十、表格"><a href="#十、表格" class="headerlink" title="十、表格"></a>十、表格</h1><p>快捷键：ctrl+T</p>
+<h1 id="十一、表情符号"><a href="#十一、表情符号" class="headerlink" title="十一、表情符号"></a>十一、表情符号</h1><p>编辑 -&gt; 表情符号</p>
+<h1 id="十二、HTML的元素"><a href="#十二、HTML的元素" class="headerlink" title="十二、HTML的元素"></a>十二、HTML的元素</h1><h2 id="1-文本居中"><a href="#1-文本居中" class="headerlink" title="1. 文本居中"></a>1. 文本居中</h2><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">&lt;center&gt;文本&lt;/center&gt;</span><br></pre></td></tr></table></figure>
+
+<p>效果：</p>
+<center>文本</center>
+
+<h2 id="2-快捷键显示"><a href="#2-快捷键显示" class="headerlink" title="2. 快捷键显示"></a>2. 快捷键显示</h2><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">&lt;kbd&gt;文本&lt;/kbd&gt;</span><br></pre></td></tr></table></figure>
+
+<p>效果：</p>
+<p><kbd>文本</kbd></p>
+<h2 id="3-加粗"><a href="#3-加粗" class="headerlink" title="3. 加粗"></a>3. 加粗</h2><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">&lt;b&gt;文本&lt;/b&gt;</span><br></pre></td></tr></table></figure>
+
+<p>效果：</p>
+<p><b>文本</b></p>
+<h2 id="4-倾斜"><a href="#4-倾斜" class="headerlink" title="4. 倾斜"></a>4. 倾斜</h2><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">&lt;i&gt;文本&lt;/i&gt;</span><br></pre></td></tr></table></figure>
+
+<p>效果：</p>
+<p><i>文本</i></p>
+<h2 id="5-上下标"><a href="#5-上下标" class="headerlink" title="5. 上下标"></a>5. 上下标</h2><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">上标：&lt;sup&gt;文本&lt;/sup&gt;</span><br><span class="line">下标：&lt;sub&gt;文本&lt;/sub&gt;</span><br></pre></td></tr></table></figure>
+
+<p>效果：</p>
+<p>x<sup>2</sup></p>
+<p>x<sub>2</sub></p>
+<h1 id="十三、目录"><a href="#十三、目录" class="headerlink" title="十三、目录"></a>十三、目录</h1><p><code>文档头部使用 [TOC]+回车</code></p>
+]]></content>
+      <categories>
+        <category>Typora</category>
+      </categories>
+      <tags>
+        <tag>Typora</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Hello World</title>
+    <url>/2024/07/22/hello-world/</url>
+    <content><![CDATA[<p>Welcome to <a href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p>
+<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo new <span class="string">&quot;My New Post&quot;</span></span><br></pre></td></tr></table></figure>
+
+<p>More info: <a href="https://hexo.io/docs/writing.html">Writing</a></p>
+<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
+
+<p>More info: <a href="https://hexo.io/docs/server.html">Server</a></p>
+<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
+
+<p>More info: <a href="https://hexo.io/docs/generating.html">Generating</a></p>
+<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
+
+<p>More info: <a href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>
+]]></content>
+  </entry>
+  <entry>
+    <title>WSL2安装配置</title>
+    <url>/2024/06/12/WSL2%E5%AE%89%E8%A3%85%E9%85%8D%E7%BD%AE/</url>
+    <content><![CDATA[<h1 id="一、-安装配置WSL2"><a href="#一、-安装配置WSL2" class="headerlink" title="一、 安装配置WSL2"></a>一、 安装配置WSL2</h1><span id="more"></span>
+
+<h2 id="1-安装WSL2"><a href="#1-安装WSL2" class="headerlink" title="1.安装WSL2"></a>1.安装WSL2</h2><p>启用适用于 Linux 的 Windows 子系统</p>
+<p><code>dism.exe /online /enable-feature /featurename:Microsoft-Windows-Subsystem-Linux /all /norestart</code></p>
+<p>启用虚拟化</p>
+<p><code>dism.exe /online /enable-feature /featurename:VirtualMachinePlatform /all /norestart</code></p>
+<p>启动Hyper-V</p>
+<p>Windows+R键，调出运行，键入control，进入控制面板，进入程序，打开启动或关闭Windows功能，勾选Hyper-V，重启</p>
+<p><a href="https://wslstorestorage.blob.core.windows.net/wslblob/wsl_update_x64.msi" title="把链接拷贝到浏览器上">下载并安装X64的WSL2 linux内核升级包</a></p>
+<p>设置WSL默认版本</p>
+<p><code>wsl --set-default-version 2</code></p>
+<h2 id="2-安装linux"><a href="#2-安装linux" class="headerlink" title="2. 安装linux"></a>2. 安装linux</h2><p>打开Store商店，输入Arch，下载</p>
+<p>下载完了，打开，输入用户名，密码</p>
+<h2 id="3-配置Arch"><a href="#3-配置Arch" class="headerlink" title="3. 配置Arch"></a>3. 配置Arch</h2><h3 id="3-1-换源"><a href="#3-1-换源" class="headerlink" title="3.1 换源"></a>3.1 换源</h3><p>切换Arch linux、Arch linux CN源</p>
+<p><a href="https://mirrors.ustc.edu.cn/help/">中科大软件源</a></p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="built_in">sudo</span> pacman -Syyuu</span><br><span class="line"><span class="built_in">sudo</span> pacman-key --lsign-key <span class="string">&quot;farseerfc@archlinux.org&quot;</span></span><br><span class="line"><span class="built_in">sudo</span> pacman -S archlinuxcn-keyring</span><br><span class="line"><span class="built_in">sudo</span> pacman -S yay</span><br><span class="line"><span class="built_in">sudo</span> passwd root <span class="comment"># 修改root密码</span></span><br></pre></td></tr></table></figure>
+
+<p>下载nvim、zsh &amp; ohmyzsh、yay</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="built_in">cat</span> /etc/shells <span class="comment"># 查看zsh是否安装</span></span><br><span class="line"><span class="built_in">sudo</span> pacman -S zsh</span><br><span class="line">git <span class="built_in">clone</span> --depth=1 git@github.com:ryanoasis/nerd-fonts.git</span><br><span class="line"><span class="built_in">cd</span> nerd-fonts</span><br><span class="line">./install.sh</span><br></pre></td></tr></table></figure>
+
+<h3 id="3-2-zsh-ohmyzsh"><a href="#3-2-zsh-ohmyzsh" class="headerlink" title="3.2 zsh &amp; ohmyzsh"></a>3.2 zsh &amp; ohmyzsh</h3><p>ohmyzsh安装：</p>
+<ol>
+<li>把 oh-my-zsh 项目 Clone 下来：</li>
+</ol>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">git <span class="built_in">clone</span> https://github.com/robbyrussell/oh-my-zsh.git ~/.oh-my-zsh</span><br></pre></td></tr></table></figure>
+
+<ol start="2">
+<li>复制 .zshrc</li>
+</ol>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="built_in">cp</span> ~/.oh-my-zsh/templates/zshrc.zsh-template ~/.zshrc</span><br></pre></td></tr></table></figure>
+
+<ol start="3">
+<li>更改你的默认 Shell</li>
+</ol>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">chsh -s /bin/zsh</span><br></pre></td></tr></table></figure>
+
+<p>zsh插件:</p>
+<ol>
+<li><p>powerlevel10k	# 主题</p>
+<p> <code>git clone --depth=1 https://gitee.com/romkatv/powerlevel10k.git $&#123;ZSH_CUSTOM:-$HOME/.oh-my-zsh/custom&#125;/themes/powerlevel10k</code></p>
+<p> 把.zshrc打开，找到ZSH_THEME，把值改为”powerlevel10k&#x2F;powerlevel10k”</p>
+</li>
+<li><p>auto-suggestion	# 自动补全</p>
+<p> <code>git clone https://github.com/zsh-users/zsh-autosuggestions $&#123;ZSH_CUSTOM:-~/.oh-my-zsh/custom&#125;/plugins/zsh-autosuggestions</code></p>
+<p> 把.zshrc打开，找到plugins&#x3D;(git)，在git后面添加zsh-autosuggestions</p>
+</li>
+<li><p>syntax highlighting	# 语法高亮</p>
+<p> <code>git clone https://github.com/zsh-users/zsh-syntax-highlighting.git $&#123;ZSH_CUSTOM:-~/.oh-my-zsh/custom&#125;/plugins/zsh-syntax-highlighting</code></p>
+<p> 把.zshrc打开，找到plugins&#x3D;(git)，在git后面添加zsh-syntax-highlighting</p>
+</li>
+</ol>
+<p>最后<code>source ~/.zshrc</code></p>
+<h3 id="3-3-nvim"><a href="#3-3-nvim" class="headerlink" title="3.3 nvim"></a>3.3 nvim</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="built_in">sudo</span> pacman -S neovim</span><br><span class="line">git <span class="built_in">clone</span> git@github.com:ayamir/nvimdots.git</span><br><span class="line"><span class="built_in">cd</span> nvimdots/scripts</span><br><span class="line">./install.sh</span><br><span class="line"><span class="comment"># 如果始终无法安装成功，则执行下条命令</span></span><br><span class="line"><span class="built_in">rm</span> -fr ~/.local/share/nvim/site/lazy</span><br></pre></td></tr></table></figure>
+
+<h3 id="3-4-nano编辑器"><a href="#3-4-nano编辑器" class="headerlink" title="3.4 nano编辑器"></a>3.4 nano编辑器</h3><p>Ctrl+O保存,按回车保存当前文件</p>
+<p>Ctrl+X退出</p>
+<h1 id="二、-迁移WSL2"><a href="#二、-迁移WSL2" class="headerlink" title="二、 迁移WSL2"></a>二、 迁移WSL2</h1><figure class="highlight powershell"><table><tr><td class="code"><pre><span class="line">wsl <span class="literal">--shutdown</span> <span class="comment">#关闭所有正在运行的实例</span></span><br><span class="line">wsl <span class="literal">-l</span> <span class="literal">-v</span> <span class="comment">#查看STATE是否为Stopped</span></span><br><span class="line">wsl <span class="literal">--export</span> Ubuntu  D:\Ubuntu_WSL2\Ubuntu.tar <span class="comment">#导出Ubuntu到D盘的Ubuntu_WSL2目录并创建一个Ubuntu.tar的归档文件</span></span><br><span class="line">wsl <span class="literal">--unregister</span> Ubuntu <span class="comment">#注销Ubuntu</span></span><br><span class="line">wsl <span class="literal">--import</span> Ubuntu D:\Ubuntu_WSL2 D:\Ubuntu_WSL2\Ubuntu.tar <span class="comment">#把Ubuntu.tar重新注册为linux发行版</span></span><br><span class="line">Ubuntu config <span class="literal">--default-user</span> chpw <span class="comment">#新建一个叫chpw用户</span></span><br></pre></td></tr></table></figure>
+]]></content>
+      <categories>
+        <category>WSL2</category>
+      </categories>
+      <tags>
+        <tag>WSL2</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Linux服务器实训</title>
+    <url>/2024/06/12/%E6%9C%8D%E5%8A%A1%E5%99%A8%E5%AE%9E%E8%AE%AD/</url>
+    <content><![CDATA[<blockquote>
+<p>这是大学实训linux服务与配置用到的操作步骤<br>mysql操作基于Ubuntu 20.04, 其他操作基于CentOS 7</p>
+</blockquote>
+<span id="more"></span>
+<h1 id="1-实验配置"><a href="#1-实验配置" class="headerlink" title="1. 实验配置"></a>1. 实验配置</h1><h2 id="启用firewalld服务"><a href="#启用firewalld服务" class="headerlink" title="启用firewalld服务"></a>启用firewalld服务</h2><p><code>systemctl start firewalld</code></p>
+<h2 id="关闭SElinux"><a href="#关闭SElinux" class="headerlink" title="关闭SElinux"></a>关闭SElinux</h2><p><code>getenforce</code>查看是否为Disable</p>
+<h2 id="配置软件源"><a href="#配置软件源" class="headerlink" title="配置软件源"></a>配置软件源</h2><h3 id="配置centos-7本地源"><a href="#配置centos-7本地源" class="headerlink" title="配置centos 7本地源"></a>配置centos 7本地源</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="meta">#! /bin/bash</span></span><br><span class="line"></span><br><span class="line">path=<span class="string">&quot;/etc/yum.repos.d&quot;</span></span><br><span class="line"><span class="keyword">if</span> [ ! -e <span class="string">&quot;<span class="variable">$path</span>&quot;</span> ]; <span class="keyword">then</span></span><br><span class="line">	<span class="built_in">mkdir</span> <span class="string">&quot;<span class="variable">$path</span>&quot;</span></span><br><span class="line"><span class="keyword">else</span></span><br><span class="line">	<span class="built_in">rm</span> -rf <span class="string">&quot;<span class="variable">$path</span>&quot;</span></span><br><span class="line">	<span class="built_in">mkdir</span> <span class="string">&quot;<span class="variable">$path</span>&quot;</span></span><br><span class="line"><span class="keyword">fi</span></span><br><span class="line"></span><br><span class="line">wget -O /etc/yum.repos.d/CentOS-Base.repo http://mirrors.aliyun.com/repo/Centos-7.repo</span><br><span class="line">yum remove epel-release -y &amp;&amp; yum install epel-release -y; </span><br><span class="line">yum clean all &amp;&amp; yum makecache;</span><br><span class="line"></span><br><span class="line">iso=<span class="string">&quot;/mnt/iso&quot;</span></span><br><span class="line"><span class="keyword">if</span> [ ! -e <span class="string">&quot;<span class="variable">$iso</span>&quot;</span> ]; <span class="keyword">then</span></span><br><span class="line">	<span class="built_in">mkdir</span> <span class="variable">$iso</span></span><br><span class="line"><span class="keyword">fi</span>	</span><br><span class="line">mount /dev/cdrom /mnt/iso;</span><br><span class="line">dvd=<span class="string">&quot;/etc/yum.repos.d/dvd.repo&quot;</span></span><br><span class="line"><span class="keyword">if</span> [ -e <span class="string">&quot;<span class="variable">$dvd</span>&quot;</span> ]; <span class="keyword">then</span></span><br><span class="line">	<span class="built_in">rm</span> <span class="variable">$dvd</span></span><br><span class="line"><span class="keyword">else</span></span><br><span class="line">	<span class="built_in">touch</span> <span class="variable">$dvd</span></span><br><span class="line"><span class="keyword">fi</span></span><br><span class="line"><span class="built_in">cat</span> &lt;&lt;<span class="string">EOF &gt;&gt; &quot;$dvd&quot;;</span></span><br><span class="line"><span class="string">[dvd]</span></span><br><span class="line"><span class="string">name=dvd</span></span><br><span class="line"><span class="string">baseurl=file:///mnt/cd0</span></span><br><span class="line"><span class="string">gpgcheck=0</span></span><br><span class="line"><span class="string">enabled=1</span></span><br><span class="line"><span class="string">EOFpriority=1</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">yum -y install yum-priorities; </span></span><br><span class="line"><span class="string">path=&quot;/etc/yum.repos.d/CentOS-Base.repo&quot;</span></span><br><span class="line"><span class="string">if grep -q &quot;priority=2&quot; &quot;$path&quot;; then</span></span><br><span class="line"><span class="string">	echo &quot;已包含&quot;</span></span><br><span class="line"><span class="string">else</span></span><br><span class="line"><span class="string">	sed -i &#x27;/7/a\priority=2&#x27; &quot;$path&quot;;</span></span><br><span class="line"><span class="string">fi		</span></span><br><span class="line"><span class="string">path=&quot;/etc/yum.repos.d/epel.repo&quot;</span></span><br><span class="line"><span class="string">if grep -q &quot;priority=11&quot; &quot;$path&quot;; then</span></span><br><span class="line"><span class="string">	echo &quot;已包含&quot;</span></span><br><span class="line"><span class="string">else</span></span><br><span class="line"><span class="string">	sed -i &#x27;11i\priority=11&#x27; &quot;$path&quot;;</span></span><br><span class="line"><span class="string">fi		</span></span><br><span class="line"><span class="string">yum clean all &amp;&amp; yum makecache;</span></span><br><span class="line"><span class="string">yum install httpd -y;</span></span><br><span class="line"><span class="string">yum repolist;</span></span><br></pre></td></tr></table></figure>
+
+<p>软件源地址: </p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">清华大学软件源: https://mirrors.tuna.tsinghua.edu.cn/help</span><br><span class="line">中科大软件源: https://mirrors.ustc.edu.cn/help</span><br><span class="line">华为云软件源: https://mirrors.huaweicloud.com/home</span><br><span class="line">阿里云软件源: https://developer.aliyun.com/mirror/</span><br><span class="line">上海交大软件源: https://mirrors.sjtug.sjtu.edu.cn/docs/ubuntu</span><br></pre></td></tr></table></figure>
+<p>我使用的是中科大软件源:<br>CentOS 7: </p>
+<ul>
+<li>使用vim(没有就用vi)打开**&#x2F;etc&#x2F;yum.repos.d&#x2F;CentOS-Base.repo**</li>
+<li>把下面的软件源输入进去<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">[base]</span><br><span class="line">name=CentOS-<span class="variable">$releasever</span> - Base</span><br><span class="line"><span class="comment">#mirrorlist=http://mirrorlist.centos.org/?release=$releasever&amp;arch=$basearch&amp;repo=os&amp;infra=$infra</span></span><br><span class="line">baseurl=https://mirrors.ustc.edu.cn/centos/<span class="variable">$releasever</span>/os/<span class="variable">$basearch</span>/</span><br><span class="line">gpgcheck=1</span><br><span class="line">gpgkey=file:///etc/pki/rpm-gpg/RPM-GPG-KEY-CentOS-7</span><br><span class="line"><span class="comment">#released updates</span></span><br><span class="line">[updates]</span><br><span class="line">name=CentOS-<span class="variable">$releasever</span> - Updates</span><br><span class="line"><span class="comment">#mirrorlist=http://mirrorlist.centos.org/?release=$releasever&amp;arch=$basearch&amp;repo=updates&amp;infra=$infra</span></span><br><span class="line">baseurl=https://mirrors.ustc.edu.cn/centos/<span class="variable">$releasever</span>/updates/<span class="variable">$basearch</span>/</span><br><span class="line">gpgcheck=1</span><br><span class="line">gpgkey=file:///etc/pki/rpm-gpg/RPM-GPG-KEY-CentOS-7</span><br><span class="line"><span class="comment">#additional packages that may be useful</span></span><br><span class="line">[extras]</span><br><span class="line">name=CentOS-<span class="variable">$releasever</span> - Extras</span><br><span class="line"><span class="comment">#mirrorlist=http://mirrorlist.centos.org/?release=$releasever&amp;arch=$basearch&amp;repo=extras&amp;infra=$infra</span></span><br><span class="line">baseurl=https://mirrors.ustc.edu.cn/centos/<span class="variable">$releasever</span>/extras/<span class="variable">$basearch</span>/</span><br><span class="line">gpgcheck=1</span><br><span class="line">gpgkey=file:///etc/pki/rpm-gpg/RPM-GPG-KEY-CentOS-7</span><br><span class="line"><span class="comment">#additional packages that extend functionality of existing packages</span></span><br><span class="line">[centosplus]</span><br><span class="line">name=CentOS-<span class="variable">$releasever</span> - Plus</span><br><span class="line"><span class="comment">#mirrorlist=http://mirrorlist.centos.org/?release=$releasever&amp;arch=$basearch&amp;repo=centosplus&amp;infra=$infra</span></span><br><span class="line">baseurl=https://mirrors.ustc.edu.cn/centos/<span class="variable">$releasever</span>/centosplus/<span class="variable">$basearch</span>/</span><br><span class="line">gpgcheck=1</span><br><span class="line">enabled=0</span><br><span class="line">gpgkey=file:///etc/pki/rpm-gpg/RPM-GPG-KEY-CentOS-7</span><br></pre></td></tr></table></figure></li>
+<li>使用<code>sudo yum update</code>更新</li>
+</ul>
+<p>Ubuntu 20.04: </p>
+<ul>
+<li>使用vi打开**&#x2F;etc&#x2F;apt&#x2F;sources.list**</li>
+<li>输入软件源: <figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 默认注释了源码仓库，如有需要可自行取消注释</span></span><br><span class="line">deb https://mirrors.ustc.edu.cn/ubuntu/ focal main restricted universe multiverse</span><br><span class="line">deb https://mirrors.ustc.edu.cn/ubuntu/ focal-security main restricted universe multiverse</span><br><span class="line">deb https://mirrors.ustc.edu.cn/ubuntu/ focal-updates main restricted universe multiverse</span><br><span class="line">deb https://mirrors.ustc.edu.cn/ubuntu/ focal-backports main restricted universe multiverse</span><br></pre></td></tr></table></figure></li>
+<li>使用<code>sudo apt update</code>更新</li>
+</ul>
+<h1 id="2-使用RDP方式连接linux服务器"><a href="#2-使用RDP方式连接linux服务器" class="headerlink" title="2. 使用RDP方式连接linux服务器"></a>2. 使用RDP方式连接linux服务器</h1><blockquote>
+<p>开通防火墙的3389端口, 即可</p>
+</blockquote>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">firewall-cmd --permanent --add-port=3389/tcp</span><br><span class="line">firewall-cmd --reload <span class="comment"># 使上面的配置生效</span></span><br></pre></td></tr></table></figure>
+
+<h1 id="3-制作dhcp服务器"><a href="#3-制作dhcp服务器" class="headerlink" title="3. 制作dhcp服务器"></a>3. 制作dhcp服务器</h1><blockquote>
+<p>本实验需要用到云计算机A、B和C, 其中A、B装有centos 7, C装有windows xp<br>使用A、B的ens33网卡，C使用本地连接2</p>
+</blockquote>
+<h2 id="dhcp服务安装和配置"><a href="#dhcp服务安装和配置" class="headerlink" title="dhcp服务安装和配置"></a>dhcp服务安装和配置</h2><blockquote>
+<p>在云计算机A中操作</p>
+</blockquote>
+<h3 id="安装"><a href="#安装" class="headerlink" title="安装:"></a>安装:</h3><p>使用<code>sudo yum install dhcp -y</code>安装, 使用<code>dhcpd</code>检查是否成功安装dhcp</p>
+<h3 id="配置"><a href="#配置" class="headerlink" title="配置:"></a>配置:</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="built_in">cat</span>&lt;&lt;<span class="string">EOF &gt; /etc/dhcp/dhcpd.conf</span></span><br><span class="line"><span class="string">ddns-update-style none;   #配置DHCP-DNS为不自动更新模式</span></span><br><span class="line"><span class="string">log-facility local7;         #local7以上级别的日志发送到dhcp日志</span></span><br><span class="line"><span class="string">default-lease-time 600;             #默认租约时间长度</span></span><br><span class="line"><span class="string">max-lease-time 3600;              #最大租约时间长度</span></span><br><span class="line"><span class="string">subnet 192.168.24.0 netmask 255.255.255.0 &#123;     #子网号和掩码</span></span><br><span class="line"><span class="string">range 192.168.24.50 192.168.24.100;           #IP地址分配范围</span></span><br><span class="line"><span class="string">option domain-name-servers 192.168.24.1;      #域名服务器地址</span></span><br><span class="line"><span class="string">option domain-name &quot;JQE.com&quot;;              #域名</span></span><br><span class="line"><span class="string">option routers 192.168.24.1;                   #网关地址</span></span><br><span class="line"><span class="string">option broadcast-address 192.168.24.254;       #广播地址</span></span><br><span class="line"><span class="string">&#125;</span></span><br><span class="line"><span class="string">EOF</span></span><br></pre></td></tr></table></figure>
+<h2 id="修改IP"><a href="#修改IP" class="headerlink" title="修改IP"></a>修改IP</h2><ul>
+<li>在A中使用<strong>nmtui</strong>命令工具修改ens33网卡IP为<strong>192.168.24.1</strong>, 然后重新激活网卡</li>
+<li>在B中使用<strong>nmtui</strong>命令修改ens33网卡IP为自动分配</li>
+<li>在C中找到网络连接把本地连接2改成自动分配IP</li>
+</ul>
+<h1 id="4-制作SSH服务器"><a href="#4-制作SSH服务器" class="headerlink" title="4. 制作SSH服务器"></a>4. 制作SSH服务器</h1><ul>
+<li>创建docker虚拟机: <code>docker run -itd  --name nczy --hostname chpw --privileged=true  centos:7  /usr/sbin/init</code></li>
+<li>进入: <code>docker exec -it nczy bash</code></li>
+<li>进入虚拟机可能会没网, 所以在进入之前先: <code>systemctl restart docker</code></li>
+<li>如果还是没网, 就照下面的输: <figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 在宿主机</span></span><br><span class="line"><span class="built_in">cat</span>&lt;&lt;<span class="string">EOF &gt; /etc/sysctl.conf</span></span><br><span class="line"><span class="string">	net.ipv4.ip_forward = 1</span></span><br><span class="line"><span class="string">EOF</span></span><br><span class="line">sysctl -p</span><br><span class="line">systemctl restart docker</span><br><span class="line">docker <span class="built_in">exec</span> -it nczy bash <span class="comment"># 启动nczy</span></span><br></pre></td></tr></table></figure></li>
+</ul>
+<p>虚拟机里输入: </p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">yum install openssh-server</span><br><span class="line">systemctl restart sshd --now</span><br><span class="line"><span class="built_in">exit</span></span><br></pre></td></tr></table></figure>
+<p>在宿主机里输入:<br><code>firewall-cmd --zone=public --add-forward-port=port=2222:proto=tcp:toaddr=172.17.0.2:toport=22</code><br>在终端输入:<br><code>ssh root@宿主机IP地址 -p 2222</code></p>
+<h1 id="5-在nczy安装RDP服务-从校园网访问"><a href="#5-在nczy安装RDP服务-从校园网访问" class="headerlink" title="5. 在nczy安装RDP服务,从校园网访问"></a>5. 在nczy安装RDP服务,从校园网访问</h1><ul>
+<li>在虚拟机中输入: <figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">yum install -y epel-release   <span class="comment">#添加第三方安装源epel-release</span></span><br><span class="line">yum install -y xrdp</span><br><span class="line">yum groupinstall -y Xfce    <span class="comment"># 基于上面epel-release，得先安装它</span></span><br><span class="line"><span class="built_in">echo</span> <span class="string">&quot;xfce4-session&quot;</span> &gt; ~/.Xclients</span><br><span class="line"><span class="built_in">chmod</span> +x ~/.Xclients</span><br><span class="line">sed -i <span class="string">&#x27;s/ssl_protocols=.*/ssl_protocols=TLSv1/&#x27;</span> /etc/xrdp/xrdp.ini </span><br><span class="line">systemctl start xrdp --now </span><br><span class="line">systemctl <span class="built_in">enable</span> xrdp --now </span><br></pre></td></tr></table></figure></li>
+<li>在宿主机中输入: <figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">firewall-cmd --permanent --add-port=3390/tcp</span><br><span class="line">firewall-cmd --reload</span><br><span class="line">firewall-cmd --zone=public --add-forward-port=port=3390:proto=tcp:toaddr=172.17.0.2:toport=3389</span><br></pre></td></tr></table></figure></li>
+</ul>
+<h1 id="6-dns"><a href="#6-dns" class="headerlink" title="6. dns"></a>6. dns</h1><h2 id="添加docker国内镜像"><a href="#添加docker国内镜像" class="headerlink" title="添加docker国内镜像"></a>添加docker国内镜像</h2><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="built_in">cat</span>&lt;&lt;<span class="string">EOF &gt; /etc/docker/daemon.json</span></span><br><span class="line"><span class="string">&#123;</span></span><br><span class="line"><span class="string">	&quot;registry-mirrors&quot;: [</span></span><br><span class="line"><span class="string">    &quot;https://9cpn8tt6.mirror.aliyuncs.com&quot;,</span></span><br><span class="line"><span class="string">    &quot;https://dockerproxy.com&quot;,</span></span><br><span class="line"><span class="string">    &quot;https://hub-mirror.c.163.com&quot;,</span></span><br><span class="line"><span class="string">    &quot;https://mirror.baidubce.com&quot;,</span></span><br><span class="line"><span class="string">    &quot;https://ccr.ccs.tencentyun.com&quot;</span></span><br><span class="line"><span class="string"> 	]</span></span><br><span class="line"><span class="string">&#125;</span></span><br><span class="line"><span class="string">EOF</span></span><br></pre></td></tr></table></figure>
+<h2 id="拉取bind服务器"><a href="#拉取bind服务器" class="headerlink" title="拉取bind服务器"></a>拉取bind服务器</h2><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">systemctl start docker</span><br><span class="line"></span><br><span class="line">docker pull sameersbn/bind</span><br><span class="line"></span><br><span class="line"><span class="built_in">mkdir</span> -p /opt/docker/bind</span><br><span class="line"></span><br><span class="line">lsof -i :53 <span class="comment"># 查看哪些服务监听着53端口</span></span><br><span class="line">systemctl stop dnsmasq <span class="comment"># 暂停dnsmasq服务</span></span><br><span class="line"><span class="built_in">kill</span> -9 PID <span class="comment"># PID在上一条命令显示出了</span></span><br><span class="line"></span><br><span class="line">docker run --name <span class="built_in">bind</span> -d \</span><br><span class="line">--restart=always \</span><br><span class="line">-p 53:53/tcp \</span><br><span class="line">-p 53:53/udp \</span><br><span class="line">-p 10000:10000/tcp \</span><br><span class="line">--volume /opt/docker/bind:/data \</span><br><span class="line">sameersbn/bind</span><br><span class="line"></span><br><span class="line">docker restart <span class="built_in">bind</span></span><br></pre></td></tr></table></figure>
+
+<h1 id="7-安装-mysql"><a href="#7-安装-mysql" class="headerlink" title="7. 安装 mysql"></a>7. 安装 mysql</h1><blockquote>
+<p>基于ubuntu 20.04</p>
+</blockquote>
+<ul>
+<li><p>安装mysql服务<br><code>sudo apt install mysql-server</code></p>
+</li>
+<li><p>启动服务<br><code>sudo service mysql start</code></p>
+</li>
+<li><p>启动服务<br><code>mysql -u root -p</code></p>
+</li>
+<li><p>修改密码和授予远程访问权限</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">CREATE USER <span class="string">&#x27;root&#x27;</span>@<span class="string">&#x27;%&#x27;</span> IDENTIFIED BY <span class="string">&#x27;123456&#x27;</span>; <span class="comment"># 创建一个用户为root并且密码设置为123456</span></span><br><span class="line">GRANT ALL PRIVILEGES ON *.* TO <span class="string">&#x27;root&#x27;</span>@<span class="string">&#x27;%&#x27;</span> WITH GRANT OPTION; <span class="comment"># 授予root用户远程访问权限</span></span><br><span class="line">FLUSH PRIVILEGES; <span class="comment"># 刷新配置</span></span><br></pre></td></tr></table></figure></li>
+<li><p>修改配置文件<br>在<code>/etc/mysql/mysql.cnf</code>文件中输入下面两行</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">[mysqld]</span><br><span class="line">bind-address = 0.0.0.0</span><br></pre></td></tr></table></figure></li>
+</ul>
+<p>把<code>/etc/mysql/mysql.conf.d/mysqld.conf</code>中下面两行注释掉</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">bind-address = 127.0.0.1</span><br><span class="line">mysqlx-bind-address = 127.0.0.1</span><br></pre></td></tr></table></figure>
+
+<p><code>service mysql restart</code></p>
+<h1 id="8-使用python程序向linux系统发送命令"><a href="#8-使用python程序向linux系统发送命令" class="headerlink" title="8. 使用python程序向linux系统发送命令"></a>8. 使用python程序向linux系统发送命令</h1><figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> subprocess</span><br><span class="line"></span><br><span class="line">result = subprocess.run(</span><br><span class="line">    [<span class="string">&#x27;ssh&#x27;</span>, <span class="string">&#x27;root@172.16.124.24&#x27;</span>, <span class="string">&#x27;ls -l /&#x27;</span>],</span><br><span class="line">    capture_output=<span class="literal">True</span>,</span><br><span class="line">    text=<span class="literal">True</span>,</span><br><span class="line">    encoding=<span class="string">&#x27;utf-8&#x27;</span>  <span class="comment"># 使用UTF-8编码</span></span><br><span class="line">)</span><br><span class="line"><span class="built_in">print</span>(result.stdout)</span><br></pre></td></tr></table></figure>
+
+]]></content>
+      <categories>
+        <category>Linux</category>
+      </categories>
+      <tags>
+        <tag>Linux</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>物联网Py笔记</title>
+    <url>/2024/06/12/%E7%89%A9%E8%81%94%E7%BD%91py%E7%AC%94%E8%AE%B0/</url>
+    <content><![CDATA[<h1 id="Py所需包"><a href="#Py所需包" class="headerlink" title="Py所需包"></a>Py所需包</h1><span id="more"></span>
+
+<h2 id="Pyinstaller库"><a href="#Pyinstaller库" class="headerlink" title="Pyinstaller库"></a>Pyinstaller库</h2><blockquote>
+<p>  用于打包项目为exe程序</p>
+</blockquote>
+<p>安装：<code>pip install pyinstaller</code></p>
+<p>用法(在命令行中输入)：</p>
+<ol>
+<li>可覆盖原有包：<code>pyinstaller -F main.py</code></li>
+<li>可更改打包后程序名字为Test：<code>pyinstaller -F -n &quot;Test&quot; main.py</code></li>
+</ol>
+<h2 id="PyQt5库"><a href="#PyQt5库" class="headerlink" title="PyQt5库"></a>PyQt5库</h2><blockquote>
+<p>  用于开发GUI界面</p>
+</blockquote>
+<p>安装：</p>
+<ol>
+<li><code>pip install pyqt5</code></li>
+<li><code>pip install pyqtchart</code>:PyQt5的QtChart包需要单独安装</li>
+</ol>
+<p>导入：<code>import PyQt5</code></p>
+<h2 id="socket库"><a href="#socket库" class="headerlink" title="socket库"></a>socket库</h2><blockquote>
+<p>  网络编程库，py自带库无需安装</p>
+</blockquote>
+<p>导入：<code>import socket</code></p>
+<h2 id="requests库"><a href="#requests库" class="headerlink" title="requests库"></a>requests库</h2><blockquote>
+<p>  爬虫库</p>
+</blockquote>
+<p>安装：<code>pip install requests</code></p>
+<p>导入：<code>import requests</code></p>
+<h2 id="pandas库"><a href="#pandas库" class="headerlink" title="pandas库"></a>pandas库</h2><blockquote>
+<p>  数据分析库</p>
+</blockquote>
+<p>安装命令:</p>
+<ol>
+<li><code>pip install pandas</code></li>
+<li><code>pip install openpyxl # pandas依赖</code></li>
+</ol>
+<p>导入：<code>pip install pandas</code></p>
+<h2 id="pyserial库"><a href="#pyserial库" class="headerlink" title="pyserial库"></a>pyserial库</h2><blockquote>
+<p>  串口库</p>
+</blockquote>
+<p>安装：<code>pip install pyserial</code></p>
+<p>导入：<code>import serial</code></p>
+<h1 id="学习笔记"><a href="#学习笔记" class="headerlink" title="学习笔记"></a>学习笔记</h1>]]></content>
+      <categories>
+        <category>物联网</category>
+      </categories>
+      <tags>
+        <tag>物联网</tag>
+        <tag>Python</tag>
+      </tags>
+  </entry>
+</search>
