@@ -173,54 +173,6 @@
       </tags>
   </entry>
   <entry>
-    <title>VIM操作</title>
-    <url>/2024/06/12/VIM%E5%AE%89%E8%A3%85%E5%92%8C%E6%93%8D%E4%BD%9C/</url>
-    <content><![CDATA[<h1 id="普通模式"><a href="#普通模式" class="headerlink" title="普通模式"></a>普通模式</h1><span id="more"></span>
-<blockquote>
-<p>使用Esc键进入</p>
-</blockquote>
-<p>h&#x2F;j&#x2F;k&#x2F;l: 分别是左&#x2F;上&#x2F;右&#x2F;下</p>
-<p>o: 向下插入一行</p>
-<p>O: 向上插入一行</p>
-<p>w: 词首向前移动</p>
-<p>e: 词尾向前移动</p>
-<p>b: 词首向后移动</p>
-<p>u: 撤销</p>
-<p>ctrl+r: 复原操作</p>
-<p>ctrl+q: 矩形选择</p>
-<p>V: 选择行</p>
-<p>v: 选择</p>
-<p>p: 粘贴</p>
-<p>y: 复制</p>
-<p>yy: 复制行</p>
-<p>dd: 删除行</p>
-<p>x: 删除字符</p>
-<p>dw: 删除词</p>
-<p>^&#x2F;$: 行首&#x2F;行尾</p>
-<p>gg: 定位到文件第一行, 第一个字符</p>
-<p>G: 定位到文件末尾行, 最后一个字符</p>
-<h1 id="插入模式"><a href="#插入模式" class="headerlink" title="插入模式"></a>插入模式</h1><p>i: 光标前插入</p>
-<p>I: 行首插入</p>
-<p>a: 光标后插入</p>
-<p>A: 行尾插入</p>
-<h1 id="EX模式"><a href="#EX模式" class="headerlink" title="EX模式"></a>EX模式</h1><blockquote>
-<p>使用**:**进入</p>
-</blockquote>
-<p>:set nu : 设置行号</p>
-<p>:数字 :切换到对应行去 </p>
-<p>:wq : 保存并退出</p>
-<p>:x : 和上一个基本一样, 不同的是如果未修改文件, 修改时间也不变</p>
-<p>:%s&#x2F;被替换字符&#x2F;替换字符&#x2F;g : 全文替换</p>
-<p>:&lt;’,’&gt;s&#x2F;被替换字符&#x2F;替换字符&#x2F;g : 选定区域替换</p>
-]]></content>
-      <categories>
-        <category>vim</category>
-      </categories>
-      <tags>
-        <tag>VIM</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>Typora使用方法</title>
     <url>/2019/10/30/Typora%E7%AC%94%E8%AE%B0%E4%BD%BF%E7%94%A8%E6%96%B9%E6%B3%95/</url>
     <content><![CDATA[<h1 id="一、标题"><a href="#一、标题" class="headerlink" title="一、标题"></a>一、标题</h1><span id="more"></span>
@@ -361,22 +313,52 @@
       </tags>
   </entry>
   <entry>
-    <title>Hello World</title>
-    <url>/2024/07/22/hello-world/</url>
-    <content><![CDATA[<p>Welcome to <a href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo new <span class="string">&quot;My New Post&quot;</span></span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/writing.html">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/server.html">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/generating.html">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>
+    <title>VIM操作</title>
+    <url>/2024/06/12/VIM%E5%AE%89%E8%A3%85%E5%92%8C%E6%93%8D%E4%BD%9C/</url>
+    <content><![CDATA[<h1 id="普通模式"><a href="#普通模式" class="headerlink" title="普通模式"></a>普通模式</h1><span id="more"></span>
+<blockquote>
+<p>使用Esc键进入</p>
+</blockquote>
+<p>h&#x2F;j&#x2F;k&#x2F;l: 分别是左&#x2F;上&#x2F;右&#x2F;下</p>
+<p>o: 向下插入一行</p>
+<p>O: 向上插入一行</p>
+<p>w: 词首向前移动</p>
+<p>e: 词尾向前移动</p>
+<p>b: 词首向后移动</p>
+<p>u: 撤销</p>
+<p>ctrl+r: 复原操作</p>
+<p>ctrl+q: 矩形选择</p>
+<p>V: 选择行</p>
+<p>v: 选择</p>
+<p>p: 粘贴</p>
+<p>y: 复制</p>
+<p>yy: 复制行</p>
+<p>dd: 删除行</p>
+<p>x: 删除字符</p>
+<p>dw: 删除词</p>
+<p>^&#x2F;$: 行首&#x2F;行尾</p>
+<p>gg: 定位到文件第一行, 第一个字符</p>
+<p>G: 定位到文件末尾行, 最后一个字符</p>
+<h1 id="插入模式"><a href="#插入模式" class="headerlink" title="插入模式"></a>插入模式</h1><p>i: 光标前插入</p>
+<p>I: 行首插入</p>
+<p>a: 光标后插入</p>
+<p>A: 行尾插入</p>
+<h1 id="EX模式"><a href="#EX模式" class="headerlink" title="EX模式"></a>EX模式</h1><blockquote>
+<p>使用**:**进入</p>
+</blockquote>
+<p>:set nu : 设置行号</p>
+<p>:数字 :切换到对应行去 </p>
+<p>:wq : 保存并退出</p>
+<p>:x : 和上一个基本一样, 不同的是如果未修改文件, 修改时间也不变</p>
+<p>:%s&#x2F;被替换字符&#x2F;替换字符&#x2F;g : 全文替换</p>
+<p>:&lt;’,’&gt;s&#x2F;被替换字符&#x2F;替换字符&#x2F;g : 选定区域替换</p>
 ]]></content>
+      <categories>
+        <category>vim</category>
+      </categories>
+      <tags>
+        <tag>VIM</tag>
+      </tags>
   </entry>
   <entry>
     <title>WSL2安装配置</title>
@@ -445,6 +427,24 @@
       <tags>
         <tag>WSL2</tag>
       </tags>
+  </entry>
+  <entry>
+    <title>Hello World</title>
+    <url>/2024/07/22/hello-world/</url>
+    <content><![CDATA[<p>Welcome to <a href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p>
+<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo new <span class="string">&quot;My New Post&quot;</span></span><br></pre></td></tr></table></figure>
+
+<p>More info: <a href="https://hexo.io/docs/writing.html">Writing</a></p>
+<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
+
+<p>More info: <a href="https://hexo.io/docs/server.html">Server</a></p>
+<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
+
+<p>More info: <a href="https://hexo.io/docs/generating.html">Generating</a></p>
+<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
+
+<p>More info: <a href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>
+]]></content>
   </entry>
   <entry>
     <title>Linux服务器实训</title>
